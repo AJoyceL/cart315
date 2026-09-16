@@ -1,4 +1,4 @@
-# Chapter 2 reflection
+# Reflection 1
 #### Joyce Angelina Lam
 #### 40316927 
 #### Cart 315
