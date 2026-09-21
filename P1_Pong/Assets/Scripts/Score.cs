@@ -8,16 +8,22 @@ public class Score : MonoBehaviour
 
     public TextMeshProUGUI scorePlayerOneText;
     public TextMeshProUGUI scorePlayerTwoText;
-    
-    public void IncreaseScore(int playerId)
+
+    private void Start()
+    {
+        ResetScore();
+        UpdateScore();
+    }
+
+    public void DecreaseScore(int playerId)
     {
         switch (playerId)
         {
             case 0:
-                scorePlayerOne++;
+                scorePlayerOne = scorePlayerTwo--;
                 break;
             case 1:
-                scorePlayerTwo++;
+                scorePlayerTwo = scorePlayerOne--;
                 break;
         }
         
@@ -26,8 +32,8 @@ public class Score : MonoBehaviour
 
     public void ResetScore()
     {
-        scorePlayerOne = 0;
-        scorePlayerTwo = 0;
+        scorePlayerOne = 10;
+        scorePlayerTwo = 10;
     }
 
     // Update is called once per frame

@@ -18,9 +18,15 @@ public class GameManager : MonoBehaviour
         ball.AddStartingForce();
     }
 
+    // public void CourtTriggered(int courtId)
+    // {
+    //     score.IncreaseScore((courtId == 0 ? 1 : 0)); //If left court was triggered, right player scores & vice versa
+    //     StartRound();
+    // }
+
     public void CourtTriggered(int courtId)
     {
-        score.IncreaseScore((courtId == 0 ? 1 : 0)); //If left court was triggered, right player scores & vice versa
+        score.DecreaseScore((courtId == 0 ? 1 : 0));
         StartRound();
     }
-}
+}   
