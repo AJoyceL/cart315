@@ -1784,6 +1784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ball
   speed: 100
+  alpha: 1
+  fadeSpeed: 5
 --- !u!61 &1233802268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2342,6 +2344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PaddlePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 7930131445347234323, guid: 36d863dd16cf0fd46a56fc42989d9bac, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2362,6 +2368,10 @@ PrefabInstance:
     - target: {fileID: 6533159823972323222, guid: 0ebf69f662f2c5f498536ab3385c51f1, type: 3}
       propertyPath: m_Name
       value: PaddleCPU
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533159823972323222, guid: 0ebf69f662f2c5f498536ab3385c51f1, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6826556419729617079, guid: 0ebf69f662f2c5f498536ab3385c51f1, type: 3}
       propertyPath: m_LocalPosition.x
