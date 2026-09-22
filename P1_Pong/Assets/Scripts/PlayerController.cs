@@ -13,9 +13,9 @@ public class PlayerController : MonoBehaviour
         _direction = Vector2.zero;
 
         if (Keyboard.current.wKey.isPressed)
-            _direction = Vector2.up;
-        else if (Keyboard.current.sKey.isPressed)
             _direction = Vector2.down;
+        else if (Keyboard.current.sKey.isPressed)
+            _direction = Vector2.up;
 
         paddle.direction = _direction;
     }
