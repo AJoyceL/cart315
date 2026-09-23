@@ -6,12 +6,14 @@ And like that, the first thing - confusion - that came to mind. Much like what I
 
 The first change I made - after a few considerations - was to change the scoring and win system. Rather than increasing your points, the goal is to lower the opponent's score from 10 to 0 to win. In this instance, if you score, your opponent's loses a point, bringing them you closer to a win.
 
+___
 
 ### Sept 21
 
 Again, brianstorming isn't my fort. So, in all honesty, I went online to look for ideas because inevrting the controls felt *too* simple. What I ended up with were either to rework the paddle's system, add a curvature to the ball's bounce or altering the environment, but these felt too complexe for my current level of knowledge.
 So, I left it for another day and kept the "inverting the controls" idea.
 
+___
 
 ### Sept 22
 
@@ -30,6 +32,7 @@ It was as frsutrating - thinking I had something, then realising it didn't work 
 
 It might not be my finest work, but I feel satisfied enough to leave it at that.
 
+___
 
 ### Sept 23
 
