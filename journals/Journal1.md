@@ -43,10 +43,17 @@ PS. This is quite interesting, I've never had to write a journal for my work, it
 
 ___
 
-### Sept 28
+### Sept 27
 
 While trying to double check my Pong file, something went wrng with either Unity or the Pong folder, or even both. I tried deleting Unity and restarting my macbook, but the error messages kept popping up. 
 
 So, I had to open my Pong games directly from my github repo. Perhaps that's the reason that there's now a second cart315 folder within it. (I hope the teacher ignores it....)
 
 Seeing that it only opened after that, I won't be tempting fate or play around with my files anymore and just keep it inside my Pong folder. I'm afraid deleting it will set me back in whatever progress I had made to fix the errors.
+
+___
+
+### Sept 28
+
+Decided to make a change at 1am. I added an extra ball that follows the same logic as the original ball, but it doesn't affect the score. *Balls* main goal is to confuse botht he player and the *CPUPaddle*, which I coded to randomly follow a ball.
+The reference for the boolean is [here](https://docs.unity3d.com/ScriptReference/Random-value.html), but I did use Copilot with the float code. I couldn't find a reference fitting what I wanted to make and I, myself, didn't know how to.
