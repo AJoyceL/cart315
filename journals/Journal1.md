@@ -40,3 +40,13 @@ I'm writing my journal from memory, while not as fresh as it would be if I wrote
 I'm planning on continuing like this for future entries.
 
 PS. This is quite interesting, I've never had to write a journal for my work, it makes the process more human, letting others into my thoughts in a more personal manner, without the clean, academic and robotic pane of glass I'm used to when reading about other people's works.
+
+___
+
+### Sept 28
+
+While trying to double check my Pong file, something went wrng with either Unity or the Pong folder, or even both. I tried deleting Unity and restarting my macbook, but the error messages kept popping up. 
+
+So, I had to open my Pong games directly from my github repo. Perhaps that's the reason that there's now a second cart315 folder within it. (I hope the teacher ignores it....)
+
+Seeing that it only opened after that, I won't be tempting fate or play around with my files anymore and just keep it inside my Pong folder. I'm afraid deleting it will set me back in whatever progress I had made to fix the errors.
