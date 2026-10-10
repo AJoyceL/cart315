@@ -9,3 +9,14 @@ The game olay would be mainly running and crouching, hiding behind furnitures an
 I'll come up with more ideas later on.
 
 ___
+
+### Oct 10
+
+After procrastinaitng long enough, I finally decided to start working on my prototype 2. Just to start it off with, I copy pasted a template folder so that I wouldn't have to create a new Unity file from scratch. I renamed it, and deleted the previous folders before I starte working on anything. 
+I have the background done: walls, furnitures and doors(player bedroom and bathroom), and for the player and monster, I'm currently using temporary sprites for them. I'll finish the script before I actually change them, I think it'd be easier to do it this way. 
+For now, I think I'm sticking with my plan: a hide and seek game where the player starts from point A and has to reach point B without being caught. 
+I'll have to look up how to make the monster/nightmare an agent-based model, where it'll have to move by itself and act and catch the player.
+
+___
+
+### Oct 
