@@ -19,4 +19,17 @@ I'll have to look up how to make the monster/nightmare an agent-based model, whe
 
 ___
 
+### Oct 14
+
+So I decided to work on the essential parts of the prototype: the player movement/controls, the monster Ai and the camera follow.
+the first thing I did was the player movement. Taking from the Paddle's script and discovered it moved to jerkily for what I wanted. I wanted gradual acceleration within a certain limit, but still feel like a slow crawl. I used this [reference](https://docs.unity.com/en-us/engine/6000.5/script-reference/unityengine/mathf/movetowards) to calculate the speed, but I couldn't get it working correctly, and so, I ended up asking Copilot where my mistakes were using MathF.MoveToward(). After a few more tries, I got it working. 
+Then I worked on the camera since it was essential if I wanted to be able to see what the game scene looked like. I found this [reference](https://www.codemahal.com/making-the-camera-follow-the-player-2d-unity) to allow the camera to follow the player. Since I only needed the camera to follow a horizontal path, I just too what I needed.
+Finally, the hardest part was the monster's movement. I couldn't find much of what I wanted, but a few good references were by [Generalist Programmer](https://youtu.be/8mTY7_WMPG8?si=tL5YcvFbuHbJ4Nab), by [Unity](https://discussions.unity.com/t/enemy-line-of-sight-with-raycast2d/865347) and this one by [Lost Relic Games](https://youtu.be/2VX8uD_xUlM?si=WC0vW-LnLGyFRRlT).
+The last one being very helpful to deal with the line of sight by using Raycaster. Though I used Headers instead of SerialisedFields because I was using field objects.
+Despite having all these references, I still couldn't make the monster move behind the walls and blocks because of the boc collider, but fortunetaly, ChatGPT showed me I could add object layers and change what it interacts with through the Project Setting > Physics2. By unchecking where my Monster, Player and VisionBlocker layer intersect, I got it fixed. This took the longest to get working, but it was worhtwhile seeing my monstyer game object work as I wanted it to. 
+
+I'll leave the catching, restarting and end game scene for another day. 
+
+___
+
 ### Oct 

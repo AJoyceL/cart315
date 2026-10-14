@@ -58,12 +58,7 @@ public class Nightmare : MonoBehaviour
         }
 
         // Cast a straight line toward the player.
-        RaycastHit2D hit = Physics2D.Raycast(
-            origin,
-            direction.normalized,
-            distance,
-            obstacleLayer
-        );
+        RaycastHit2D hit = Physics2D.Raycast(origin,direction.normalized, distance, obstacleLayer);
 
         // The player is visible if no obstacle blocks the line.
         return hit.collider == null;
@@ -91,13 +86,11 @@ public class Nightmare : MonoBehaviour
         float horizontalDirection = Mathf.Sign(difference);
 
         // Stop horizontal movement when directly aligned.
-        if (Mathf.Abs(difference) < 0.1f)
+        if (Mathf.Abs(difference) < 0.1f){
             horizontalDirection = 0f;
+        }
 
-        rb.linearVelocity = new Vector2(
-            horizontalDirection * chaseSpeed,
-            rb.linearVelocity.y
-        );
+        rb.linearVelocity = new Vector2(horizontalDirection * chaseSpeed, rb.linearVelocity.y);
     }
 
     // Move the Nightmare between two patrol points
@@ -106,10 +99,7 @@ public class Nightmare : MonoBehaviour
         float difference = targetPoint.position.x - transform.position.x;
         float horizontalDirection = Mathf.Sign(difference);
 
-        rb.linearVelocity = new Vector2(
-            horizontalDirection * patrolSpeed,
-            rb.linearVelocity.y
-        );
+        rb.linearVelocity = new Vector2(horizontalDirection * patrolSpeed, rb.linearVelocity.y);
 
         if (Mathf.Abs(difference) < 0.2f)
         {

@@ -5,6 +5,8 @@ public class Camera : MonoBehaviour
 
     public Transform target; 
     public Vector3 offset; 
+
+    public float speed = 5f;
    
     void Start()
     {
@@ -18,11 +20,7 @@ public class Camera : MonoBehaviour
         {
             Vector3 targetPosition = target.position + offset;
 
-            transform.position = Vector3.Lerp(
-                transform.position,
-                targetPosition,
-                5f * Time.deltaTime
-            );
+            transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
 }

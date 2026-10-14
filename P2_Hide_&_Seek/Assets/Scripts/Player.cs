@@ -4,11 +4,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private Vector2 direction; 
+    private float direction; 
 
-    public float speed = 5f; // Player speed
-    public float acceleration = 2f; // Player accelerates
-    public float deceleration = 3f; // Player decelerates
+    public float speed = 2f; // Player speed
+    public float acceleration = 2f;// Player acceleration
 
     private void Awake()
     {
@@ -29,43 +28,24 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        direction = 0f; 
+
         // Get input for horizontal movement
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            direction = Vector2.left;
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
+            direction = -1f;
         }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            direction = Vector2.right;
-        }
-        else
-        {
-            direction = Vector2.zero;
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
+
+            direction = 1f;
         }
     }
 
     private void FixedUpdate()
     {
-        float targetSpeed = direction.x * speed; // Calculate the target speed based on input and player speed
-        float newSpeed; // New speed after applying acceleration or deceleration
+        // Move the player based on input direction
+        float targetSpeed = direction * speed;
+        float currentSpeed = direction == 0f ? 0f : Mathf.MoveTowards(rb.linearVelocity.x, targetSpeed, acceleration * Time.fixedDeltaTime);
 
-        // Apply acceleration or deceleration based on input
-        if (direction == Vector2.zero)
-        {
-            newSpeed = 0f;
-        }
-        else
-        {
-            newSpeed = Mathf.MoveTowards(
-                rb.linearVelocity.x,
-                targetSpeed,
-                acceleration * Time.fixedDeltaTime
-            );
-        }
-
-        rb.linearVelocity = new Vector2(
-            newSpeed,
-            rb.linearVelocity.y
-        );
+        rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
     }
 }
