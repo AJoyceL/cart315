@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     private float direction; 
 
     public float speed = 2f; // Player speed
-    public float acceleration = 2f;// Player acceleration
+    // public float acceleration = 2f;// Player acceleration
 
     private void Awake()
     {
