@@ -32,4 +32,10 @@ I'll leave the catching, restarting and end game scene for another day.
 
 ___
 
-### Oct 
+### Oct 16
+
+Logged on to do some debugging before I left for the cinema to watch Resident Evil. I reworked the monster's prtrol function to get it to consistently walk back and forth between Point A and Point B. That was all I worked on today, but I'm planning on make the player move slower and without acceleration or make it slower(it makes sense for a child to rush to the bathroom when the path feels safe and clear, but children aren't often that fast). I'll also have to make the scene reset when the monster catches the player, add and endgame scene and probably find assets to replace the player and the monster.
+
+___
+
+### Oct
