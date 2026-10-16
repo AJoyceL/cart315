@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     {
         // Move the player based on input direction
         float targetSpeed = direction * speed;
-        float currentSpeed = direction == 0f ? 0f : Mathf.MoveTowards(rb.linearVelocity.x, targetSpeed, acceleration * Time.fixedDeltaTime);
+        float currentSpeed = direction == 0f ? 0f : Mathf.MoveTowards(rb.linearVelocity.x, targetSpeed, speed * Time.fixedDeltaTime);
 
         rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
     }

@@ -6,8 +6,8 @@ public class Nightmare : MonoBehaviour
 
     // Movement speeds for patrolling and chasing
     [Header("Movement")]
-    public float patrolSpeed = 1f;
-    public float chaseSpeed = 2f;
+    public float patrolSpeed = 10f;
+    public float chaseSpeed = 15f;
 
     // Vision range and layer mask for detecting obstacles
     [Header("Vision")]
@@ -18,9 +18,10 @@ public class Nightmare : MonoBehaviour
     [Header("Patrol")]
     public Transform pointA;
     public Transform pointB;
+    public float patrolEndX = 24f;
 
     private Rigidbody2D rb;
-    private Transform targetPoint;
+    private int patrolDirection = 1;
     private bool chasing;
 
     private void Awake()
@@ -30,9 +31,22 @@ public class Nightmare : MonoBehaviour
 
     private void Start()
     {
-        targetPoint = pointB;
+        ResetMonster();
     }
 
+    public void ResetMonster()
+    {
+        if (pointA == null || pointB == null)
+        {
+            Debug.LogError("Nightmare: Assign Point A and Point B in the Inspector!");
+            return;
+        }
+
+        rb.position = pointA.position;
+        rb.linearVelocity = Vector2.zero;
+        patrolDirection = 1;
+    }
+    
     private void Update()
     {
         chasing = CanSeePlayer();
@@ -96,14 +110,23 @@ public class Nightmare : MonoBehaviour
     // Move the Nightmare between two patrol points
     private void Patrol()
     {
-        float difference = targetPoint.position.x - transform.position.x;
-        float horizontalDirection = Mathf.Sign(difference);
+        float targetX = patrolDirection == 1
+            ? patrolEndX
+            : pointA.position.x;
 
-        rb.linearVelocity = new Vector2(horizontalDirection * patrolSpeed, rb.linearVelocity.y);
+        float currentX = rb.position.x;
 
-        if (Mathf.Abs(difference) < 0.2f)
+        // Turn around when the monster reaches its target
+        if (patrolDirection == 1 && currentX >= targetX ||
+            patrolDirection == -1 && currentX <= targetX)
         {
-            targetPoint = targetPoint == pointA ? pointB : pointA;
+            patrolDirection *= -1;
+            rb.linearVelocity = Vector2.zero;
+            return;
         }
+
+        float direction = Mathf.Sign(targetX - currentX);
+        rb.linearVelocity = new Vector2(direction * patrolSpeed, 0f);
     }
+
 }

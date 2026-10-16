@@ -1612,8 +1612,8 @@ Transform:
   m_GameObject: {fileID: 1179038831}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.11, y: -1.08, z: 0}
-  m_LocalScale: {x: 0.5, y: 3, z: 0.5}
+  m_LocalPosition: {x: -17.11, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 3, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1690,7 +1690,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!114 &1179038836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,14 +1704,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Nightmare
   player: {fileID: 1757663861}
-  patrolSpeed: 1
-  chaseSpeed: 2
+  patrolSpeed: 8
+  chaseSpeed: 10
   visionRange: 5
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  pointA: {fileID: 677309271}
+  pointA: {fileID: 1642089265}
   pointB: {fileID: 1015738665}
+  patrolEndX: 24
 --- !u!1 &1189289315
 GameObject:
   m_ObjectHideFlags: 0
