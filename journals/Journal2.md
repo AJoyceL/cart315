@@ -38,7 +38,7 @@ Logged on to do some debugging before I left for the cinema to watch Resident Ev
 
 ___
 
-### Oct 19
+### Oct 18
 
 I tried to make the player reset it's position whenever the monster catches it, but it won't work. Anything I do won't work an dI'm getting really frustrated. I'll just drop this and restart a new prototype. Hopefully I can make it with 3 days left, bevause I'm really fed up with all the problems popping up.
 I'm either going to work on the Bricks or Snake game since they're the ones I find more interesting, especially the snake. 
@@ -54,4 +54,8 @@ Yeah, I'll start workign on it tomorrow and try to finish it by wednesday.
 
 ___
 
-### Oct
+### Oct 19
+
+Just started working on the new prototype 2. I made the food square move at random position over time, but now the snake has to collide with it at a specific position to consume it. I'm working on fixing it right now.
+
+Update: as long as half of the snake collides with food, it'll eat it. 

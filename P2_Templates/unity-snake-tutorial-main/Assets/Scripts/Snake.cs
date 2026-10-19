@@ -113,15 +113,16 @@ public class Snake : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Food"))
+        if (other.CompareTag("Food"))
         {
             Grow();
+            other.GetComponent<Food>()?.RandomizePosition();
         }
-        else if (other.gameObject.CompareTag("Obstacle"))
+        else if (other.CompareTag("Obstacle"))
         {
             ResetState();
         }
-        else if (other.gameObject.CompareTag("Wall"))
+        else if (other.CompareTag("Wall"))
         {
             if (moveThroughWalls) {
                 Traverse(other.transform);
