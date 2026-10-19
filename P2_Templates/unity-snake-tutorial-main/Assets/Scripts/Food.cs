@@ -80,7 +80,7 @@ public class Food : MonoBehaviour
             }
         }
 
-        Debug.LogWarning("No free position found for food.");
+        // Debug.LogWarning("No free position found for food.");
     }
 
 }

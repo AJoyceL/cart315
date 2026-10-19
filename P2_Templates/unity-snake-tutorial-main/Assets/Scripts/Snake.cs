@@ -5,7 +5,7 @@ using UnityEngine;
 public class Snake : MonoBehaviour
 {
     public Transform segmentPrefab;
-    public Vector2Int direction = Vector2Int.right;
+    public Vector2Int direction = Vector2Int.left;
     public float speed = 10f;
     public float speedMultiplier = 1f;
     public int initialSize = 4;
@@ -80,7 +80,7 @@ public class Snake : MonoBehaviour
 
     public void ResetState()
     {
-        direction = Vector2Int.right;
+        direction = Vector2Int.left;
         transform.position = Vector3.zero;
 
         // Start at 1 to skip destroying the head
@@ -135,7 +135,10 @@ public class Snake : MonoBehaviour
                 ResetState();
             }
         }
-
+        else if (other.CompareTag("Player") || (other.CompareTag("Obstacle")))
+        {
+            ResetState();
+        }
     }
 
     private void Traverse(Transform wall)

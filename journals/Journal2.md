@@ -68,4 +68,9 @@ Step 3: Make food move at random speed.
 Update: Using Random.Range, I can set the range of speed for all food prefabs. Replaced the assigned speed to a variable I can change in the start for initial movement speed and in the RandomisePosition to randomise the speed after it resets.
 
 Step 4: Make an AI snake.
-Update: 
+Update: Recycled the Snake.cs and previous CPU Paddle from P1 to make up the bulk of the AISnake.cs, but chnaged the movement to be autonomous and added a FindFood(). Both snakes will reset if they hit one another. I also changed the snake start position so that the player starts moving to the left and the AISnake to the right.
+
+I'll continue making variations and. changes tomorrow.
+___
+
+### Oct 
