@@ -4,10 +4,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float direction; 
+    private float direction;
+    private bool canMove = true;
 
-    public float speed = 2f; // Player speed
-    // public float acceleration = 2f;// Player acceleration
+    public float speed = 0.5f;
 
     private void Awake()
     {
@@ -18,34 +18,50 @@ public class Player : MonoBehaviour
     {
         ResetPlayer();
     }
+    
 
-    // Reset the player position and velocity
     public void ResetPlayer()
     {
-        rb.linearVelocity = Vector2.zero; // Reset the player velocity
-        transform.position = new Vector2(-21f, transform.position.y); // Reset the player position 
+        Debug.Log("ResetPlayer called!");
+
+        direction = 0f;
+        rb.linearVelocity = Vector2.zero;
+        rb.position = new Vector2(-21f, rb.position.y);
+        transform.position = new Vector3(-21f, transform.position.y, transform.position.z);
+    }
+
+
+
+    public void SetMovementEnabled(bool enabled)
+    {
+        canMove = enabled;
+
+        if (!canMove)
+        {
+            direction = 0f;
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     private void Update()
     {
-        direction = 0f; 
+        direction = 0f;
 
-        // Get input for horizontal movement
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
+        if (!canMove)
+            return;
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             direction = -1f;
-        }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             direction = 1f;
-        }
     }
 
     private void FixedUpdate()
     {
-        // Move the player based on input direction
-        float targetSpeed = direction * speed;
-        float currentSpeed = direction == 0f ? 0f : Mathf.MoveTowards(rb.linearVelocity.x, targetSpeed, speed * Time.fixedDeltaTime);
-
-        rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(
+            canMove ? direction * speed : 0f,
+            rb.linearVelocity.y
+        );
     }
 }
+

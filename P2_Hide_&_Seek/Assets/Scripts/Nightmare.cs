@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Nightmare : MonoBehaviour
 {
+    private gameManager gameManager;
+    private Player Player;
+
     public Transform player;
 
     // Movement speeds for patrolling and chasing
@@ -32,6 +37,13 @@ public class Nightmare : MonoBehaviour
     private void Start()
     {
         ResetMonster();
+
+        Player = player.GetComponent<Player>();
+
+        if (Player == null)
+        {
+            Debug.LogError("Player script not found!");
+        }
     }
 
     public void ResetMonster()
@@ -53,30 +65,37 @@ public class Nightmare : MonoBehaviour
     }
 
     // Check if the Nightmare can see the player
-    private bool CanSeePlayer()
+
+    public bool CanSeePlayer()
     {
-        // If the player is not assigned, return false
-        if (player == null){
+        if (player == null)
             return false;
-        }
-            
-        // Calculate the direction and distance to the player
+
         Vector2 origin = transform.position;
         Vector2 target = player.position;
         Vector2 direction = target - origin;
         float distance = direction.magnitude;
 
-        // If the player is out of vision range, return false
-        if (distance > visionRange){
+        if (distance > visionRange)
+            return false;
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            origin,
+            direction.normalized,
+            distance,
+            obstacleLayer
+        );
+
+        // A wall blocks the Nightmare's vision.
+        if (hit.collider != null)
+        {
+            Debug.Log("Vision blocked by: " + hit.collider.name);
             return false;
         }
 
-        // Cast a straight line toward the player.
-        RaycastHit2D hit = Physics2D.Raycast(origin,direction.normalized, distance, obstacleLayer);
-
-        // The player is visible if no obstacle blocks the line.
-        return hit.collider == null;
+        return true;
     }
+
 
     private void FixedUpdate()
     {
@@ -105,6 +124,8 @@ public class Nightmare : MonoBehaviour
         }
 
         rb.linearVelocity = new Vector2(horizontalDirection * chaseSpeed, rb.linearVelocity.y);
+
+        Vector2 direction = (player.position - transform.position).normalized;
     }
 
     // Move the Nightmare between two patrol points
@@ -129,4 +150,8 @@ public class Nightmare : MonoBehaviour
         rb.linearVelocity = new Vector2(direction * patrolSpeed, 0f);
     }
 
+    public bool CanCatchPlayer()
+    {
+        return CanSeePlayer();
+    }
 }
