@@ -116,20 +116,26 @@ public class Snake : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             Grow();
-            other.GetComponent<Food>()?.RandomizePosition();
-        }
-        else if (other.CompareTag("Obstacle"))
-        {
-            ResetState();
+
+            Food food = other.GetComponent<Food>();
+
+            if (food != null)
+            {
+                food.RandomizePosition();
+            }
         }
         else if (other.CompareTag("Wall"))
         {
-            if (moveThroughWalls) {
+            if (moveThroughWalls)
+            {
                 Traverse(other.transform);
-            } else {
+            }
+            else
+            {
                 ResetState();
             }
         }
+
     }
 
     private void Traverse(Transform wall)
