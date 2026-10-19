@@ -56,6 +56,16 @@ ___
 
 ### Oct 19
 
-Just started working on the new prototype 2. I made the food square move at random position over time, but now the snake has to collide with it at a specific position to consume it. I'm working on fixing it right now.
+Just started working on the new prototype 2. 
 
+Step1: I made the food square move at random position over time, but now the snake has to collide with it at a specific position to consume it. I'm working on fixing it right now.
 Update: as long as half of the snake collides with food, it'll eat it. 
+
+Step 2: Made food spawn multiple ones at the start in an empty object called FoodSpawner.
+Update: It kept breaking the game, but I realised that I had to take FoodSpawner out of the Food object and tweaked the FoodSpawner script. Now I can set hw many spawn at the start in the Inspector and only the one consumed resets at a random position.
+
+Step 3: Make food move at random speed.
+Update: Using Random.Range, I can set the range of speed for all food prefabs. Replaced the assigned speed to a variable I can change in the start for initial movement speed and in the RandomisePosition to randomise the speed after it resets.
+
+Step 4: Make an AI snake.
+Update: 
