@@ -38,4 +38,20 @@ Logged on to do some debugging before I left for the cinema to watch Resident Ev
 
 ___
 
+### Oct 19
+
+I tried to make the player reset it's position whenever the monster catches it, but it won't work. Anything I do won't work an dI'm getting really frustrated. I'll just drop this and restart a new prototype. Hopefully I can make it with 3 days left, bevause I'm really fed up with all the problems popping up.
+I'm either going to work on the Bricks or Snake game since they're the ones I find more interesting, especially the snake. 
+I'm already getting ideas:
+- make the snake eat moving blocks,
+- make multiple spawn at the same time
+- make it possible to be played with multiple people or add an AI that's competing with the player or trying to kill the player.\,
+- make some blocks hostile to the player like remove points,
+- make some blocks give extra points,
+- etc...
+
+Yeah, I'll start workign on it tomorrow and try to finish it by wednesday.
+
+___
+
 ### Oct
