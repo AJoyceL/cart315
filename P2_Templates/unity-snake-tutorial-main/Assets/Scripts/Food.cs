@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Food : MonoBehaviour
 {
     public Collider2D gridArea;
+    public float moveSpeed = 0.5f;
+
     private Snake snake;
+    private Vector2 targetPosition;
 
     private void Awake()
     {
@@ -14,31 +18,45 @@ public class Food : MonoBehaviour
     private void Start()
     {
         RandomizePosition();
+        PickRandomTarget();
+    }
+
+    private void Update()
+    {
+        // Move slowly toward the target
+        transform.position = Vector2.MoveTowards(
+            transform.position,
+            targetPosition,
+            moveSpeed * Time.deltaTime
+        );
+
+        // Pick a new target when reached
+        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            PickRandomTarget();
+        }
+    }
+
+    private void PickRandomTarget()
+    {
+        Bounds bounds = gridArea.bounds;
+
+        int x = Mathf.RoundToInt(Random.Range(bounds.min.x, bounds.max.x));
+        int y = Mathf.RoundToInt(Random.Range(bounds.min.y, bounds.max.y));
+
+        targetPosition = new Vector2(x, y);
     }
 
     public void RandomizePosition()
     {
         Bounds bounds = gridArea.bounds;
 
-        // Pick a random position inside the bounds
-        // Round the values to ensure it aligns with the grid
         int x = Mathf.RoundToInt(Random.Range(bounds.min.x, bounds.max.x));
         int y = Mathf.RoundToInt(Random.Range(bounds.min.y, bounds.max.y));
 
-        // Prevent the food from spawning on the snake
         while (snake.Occupies(x, y))
         {
             x++;
-
-            if (x > bounds.max.x)
-            {
-                x = Mathf.RoundToInt(bounds.min.x);
-                y++;
-
-                if (y > bounds.max.y) {
-                    y = Mathf.RoundToInt(bounds.min.y);
-                }
-            }
         }
 
         transform.position = new Vector2(x, y);
@@ -46,7 +64,9 @@ public class Food : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        RandomizePosition();
+        if (other.GetComponent<Snake>() != null)
+        {
+            RandomizePosition();
+        }
     }
-
 }
