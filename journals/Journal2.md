@@ -82,6 +82,7 @@ Step 2: randomise food effect (+1, +2 & -1 segments).
 Update: It works, and just to be sure, I left debugs int he script to check in the consol. It now affects f=both the AISnake and the Snake. Effects randomise upon reset. I like the randomness of the effect, not knowing if you're eating a good or bad thing sincd they all look alike, it adds tension when you're left with 1 segment. It happened a few times during my test runs, to both me and the AISnake. I watched my snake wither to 1 segment and got unlucky and ate a bad one. I had to reset while the AISnake had a few segments to it.
 
 I'll add to this until thursday if I have any more ideas.
+ps. changed the name of my original Hide_and_seek file and made a duplicate of the final SNake game and moved it outside and into my main github file so that it's easier to find. I named it P2_Snakes
 
 ___
  
