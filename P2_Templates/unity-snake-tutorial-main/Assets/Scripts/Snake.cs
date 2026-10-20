@@ -78,6 +78,21 @@ public class Snake : MonoBehaviour
         segments.Add(segment);
     }
 
+    public void Shrink()
+    {
+        // Keep at least the head.
+        if (segments.Count <= 1)
+        {
+            return;
+        }
+
+        // Remove the last body segment.
+        Transform lastSegment = segments[segments.Count - 1];
+        segments.RemoveAt(segments.Count - 1);
+        Destroy(lastSegment.gameObject);
+    }
+
+
     public void ResetState()
     {
         direction = Vector2Int.left;
@@ -110,18 +125,26 @@ public class Snake : MonoBehaviour
 
         return false;
     }
-
+ 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Snake collided with: " + other.name +
+                " | Tag: " + other.tag);
+
         if (other.CompareTag("Food"))
         {
-            Grow();
+            Debug.Log("Food detected! Trying to eat.");
 
             Food food = other.GetComponent<Food>();
 
             if (food != null)
             {
-                food.RandomizePosition();
+                Debug.Log("Food component found. Calling Eat().");
+                food.Eat(this, null);
+            }
+            else
+            {
+                Debug.LogError("The object tagged Food has no Food.cs component!");
             }
         }
         else if (other.CompareTag("Wall"))
@@ -135,7 +158,7 @@ public class Snake : MonoBehaviour
                 ResetState();
             }
         }
-        else if (other.CompareTag("Player") || (other.CompareTag("Obstacle")))
+        else if (other.CompareTag("Player") || other.CompareTag("Obstacle"))
         {
             ResetState();
         }

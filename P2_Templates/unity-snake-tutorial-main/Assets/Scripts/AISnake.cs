@@ -24,26 +24,26 @@ public class AISnake : MonoBehaviour
     private void Update()
     {
         // Comment in for AISnake. Comment out for 2nd player
-        //FindFood();
+        FindFood();
         // Comment in for 2nd player. Comment out for AISnake
         // Only allow turning up or down while moving in the x-axis
-        if (direction.x != 0f)
-        {
-            if (Input.GetKeyDown(KeyCode.UpArrow)) {
-                input = Vector2Int.up;
-            } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-                input = Vector2Int.down;
-            }
-        }
-        // Only allow turning left or right while moving in the y-axis
-        else if (direction.y != 0f)
-        {
-            if (Input.GetKeyDown(KeyCode.RightArrow)) {
-                input = Vector2Int.right;
-            } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-                input = Vector2Int.left;
-            }
-        }
+        // if (direction.x != 0f)
+        // {
+        //     if (Input.GetKeyDown(KeyCode.UpArrow)) {
+        //         input = Vector2Int.up;
+        //     } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+        //         input = Vector2Int.down;
+        //     }
+        // }
+        // // Only allow turning left or right while moving in the y-axis
+        // else if (direction.y != 0f)
+        // {
+        //     if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        //         input = Vector2Int.right;
+        //     } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        //         input = Vector2Int.left;
+        //     }
+        // }
     }
 
     private void FixedUpdate()
@@ -168,6 +168,19 @@ private void FindFood()
         segments.Add(segment);
     }
 
+    public void Shrink()
+    {
+        // Keep at least the head.
+        if (segments.Count <= 1)
+        {
+            return;
+        }
+
+        Transform lastSegment = segments[segments.Count - 1];
+        segments.RemoveAt(segments.Count - 1);
+        Destroy(lastSegment.gameObject);
+    }
+
     public void ResetState()
     {
         direction = Vector2Int.right;
@@ -204,15 +217,23 @@ private void FindFood()
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Snake collided with: " + other.name +
+                " | Tag: " + other.tag);
+
         if (other.CompareTag("Food"))
         {
-            Grow();
+            Debug.Log("Food detected! Trying to eat.");
 
             Food food = other.GetComponent<Food>();
 
             if (food != null)
             {
-                food.RandomizePosition();
+                Debug.Log("AI Snake ate food!");
+                food.Eat(null, this);
+            }
+            else
+            {
+                Debug.LogError("The object tagged Food has no Food.cs component!");
             }
         }
         else if (other.CompareTag("Wall"))
@@ -226,7 +247,7 @@ private void FindFood()
                 ResetState();
             }
         }
-        else if (other.CompareTag("Player") || (other.CompareTag("Obstacle")))
+        else if (other.CompareTag("Player") || other.CompareTag("Obstacle"))
         {
             ResetState();
         }

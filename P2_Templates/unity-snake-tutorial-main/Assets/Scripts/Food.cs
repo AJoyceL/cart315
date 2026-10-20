@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Food : MonoBehaviour
@@ -7,18 +8,24 @@ public class Food : MonoBehaviour
     private float moveSpeed;
 
     private Snake snake;
+    private AISnake aiSnake;
     private Vector2 targetPosition;
+
+    // 1 = grow by 1, 2 = grow by 2, -1 = lose 1
+    private int foodEffect;
 
     private void Awake()
     {
         snake = FindFirstObjectByType<Snake>();
+        aiSnake = FindFirstObjectByType<AISnake>();
     }
 
     private void Start()
     {
         moveSpeed = Random.Range(0.2f, 5f);
 
-        RandomizePosition();
+        RandomiseEffect();
+        RandomisePosition();
         PickRandomTarget();
     }
 
@@ -52,12 +59,78 @@ public class Food : MonoBehaviour
         );
     }
 
-    
-    public void RandomizePosition()
+    private void RandomiseEffect()
     {
+        int random = Random.Range(0, 3);
+
+        if (random == 0)
+        {
+            foodEffect = 1;
+        }
+        else if (random == 1)
+        {
+            foodEffect = 2;
+        }
+        else
+        {
+            foodEffect = -1;
+        }
+
+        Debug.Log("New food effect: " + foodEffect + " segment(s)");
+    }
+
+    public void Eat(Snake eatingSnake, AISnake eatingAISnake)
+    {
+        if (foodEffect == 1)
+        {
+            if (eatingSnake != null)
+                eatingSnake.Grow();
+            else if (eatingAISnake != null)
+                eatingAISnake.Grow();
+
+            Debug.Log("GOOD FOOD: Grew by 1 segment!");
+        }
+        else if (foodEffect == 2)
+        {
+            if (eatingSnake != null)
+            {
+                eatingSnake.Grow();
+                eatingSnake.Grow();
+            }
+            else if (eatingAISnake != null)
+            {
+                eatingAISnake.Grow();
+                eatingAISnake.Grow();
+            }
+
+            Debug.Log("GOOD FOOD: Grew by 2 segments!");
+        }
+        else if (foodEffect == -1)
+        {
+            if (eatingSnake != null)
+                eatingSnake.Shrink();
+            else if (eatingAISnake != null)
+                eatingAISnake.Shrink();
+
+            Debug.Log("BAD FOOD: Lost 1 segment!");
+        }
+
+        RandomisePosition();
+    }
+
+    public void RandomisePosition()
+    {
+        if (gridArea == null)
+        {
+            Debug.LogError("Food is missing its Grid Area!");
+            return;
+        }
+
         Bounds bounds = gridArea.bounds;
 
+        // Change speed and effect whenever the food resets.
         moveSpeed = Random.Range(0.2f, 5f);
+        RandomiseEffect();
 
         for (int i = 0; i < 100; i++)
         {
@@ -71,7 +144,13 @@ public class Food : MonoBehaviour
                 Mathf.FloorToInt(bounds.max.y) + 1
             );
 
-            if (!snake.Occupies(x, y))
+            bool occupiedByPlayer =
+                snake != null && snake.Occupies(x, y);
+
+            bool occupiedByAI =
+                aiSnake != null && aiSnake.Occupies(x, y);
+
+            if (!occupiedByPlayer && !occupiedByAI)
             {
                 transform.position = new Vector2(x, y);
                 targetPosition = transform.position;
@@ -80,7 +159,6 @@ public class Food : MonoBehaviour
             }
         }
 
-        // Debug.LogWarning("No free position found for food.");
+        Debug.LogWarning("No free position found for food.");
     }
-
 }

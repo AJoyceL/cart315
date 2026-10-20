@@ -73,4 +73,16 @@ Update: Recycled the Snake.cs and previous CPU Paddle from P1 to make up the bul
 I'll continue making variations and. changes tomorrow.
 ___
 
-### Oct 
+### Oct 20
+
+First thing I did today, was change the colours of the game, I might also chnage the snakes' shape from square to circle.
+Update: I added keyboard commands for the AISnake so that it can be player alone, or with another person.
+
+Step 2: randomise food effect (+1, +2 & -1 segments).
+Update: It works, and just to be sure, I left debugs int he script to check in the consol. It now affects f=both the AISnake and the Snake. Effects randomise upon reset. I like the randomness of the effect, not knowing if you're eating a good or bad thing sincd they all look alike, it adds tension when you're left with 1 segment. It happened a few times during my test runs, to both me and the AISnake. I watched my snake wither to 1 segment and got unlucky and ate a bad one. I had to reset while the AISnake had a few segments to it.
+
+I'll add to this until thursday if I have any more ideas.
+
+___
+ 
+### Oct
