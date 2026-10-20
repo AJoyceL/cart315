@@ -25,18 +25,18 @@ public class Snake : MonoBehaviour
         // Only allow turning up or down while moving in the x-axis
         if (direction.x != 0f)
         {
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
+            if (Input.GetKeyDown(KeyCode.W)) {
                 input = Vector2Int.up;
-            } else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
+            } else if (Input.GetKeyDown(KeyCode.S)) {
                 input = Vector2Int.down;
             }
         }
         // Only allow turning left or right while moving in the y-axis
         else if (direction.y != 0f)
         {
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
+            if (Input.GetKeyDown(KeyCode.D)) {
                 input = Vector2Int.right;
-            } else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) {
+            } else if (Input.GetKeyDown(KeyCode.A)) {
                 input = Vector2Int.left;
             }
         }

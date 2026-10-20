@@ -23,7 +23,27 @@ public class AISnake : MonoBehaviour
 
     private void Update()
     {
-        FindFood();
+        // Comment in for AISnake. Comment out for 2nd player
+        //FindFood();
+        // Comment in for 2nd player. Comment out for AISnake
+        // Only allow turning up or down while moving in the x-axis
+        if (direction.x != 0f)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                input = Vector2Int.up;
+            } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+                input = Vector2Int.down;
+            }
+        }
+        // Only allow turning left or right while moving in the y-axis
+        else if (direction.y != 0f)
+        {
+            if (Input.GetKeyDown(KeyCode.RightArrow)) {
+                input = Vector2Int.right;
+            } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+                input = Vector2Int.left;
+            }
+        }
     }
 
     private void FixedUpdate()
