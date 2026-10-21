@@ -24,7 +24,7 @@ public class Food : MonoBehaviour
 
     private void Start()
     {
-        moveSpeed = Random.Range(0.2f, 5f);
+        moveSpeed = Random.Range(0.5f, 8f);
 
         RandomiseEffect();
         RandomisePosition();
@@ -47,24 +47,33 @@ public class Food : MonoBehaviour
     {
         if (rb == null) return;
 
-        rb.MovePosition(
-            rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime
-        );
+        Vector2 nextPosition =
+            rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
+
+        rb.MovePosition(nextPosition);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Obstacle") ||
-            collision.gameObject.CompareTag("Wall"))
+        if (other.CompareTag("Obstacle") ||
+            other.CompareTag("Wall"))
         {
-            ContactPoint2D contact = collision.GetContact(0);
+            // Find the closest point on the obstacle.
+            Vector2 closestPoint = other.ClosestPoint(rb.position);
 
+            // Calculate the direction away from the obstacle.
+            Vector2 normal = (rb.position - closestPoint).normalized;
+
+            // Reflect the food's direction.
             moveDirection = Vector2.Reflect(
                 moveDirection,
-                contact.normal
+                normal
             ).normalized;
 
+            // Set a new target in the reflected direction.
             targetPosition = rb.position + moveDirection * 5f;
+
+            //Debug.Log("Food bounced off: " + other.name);
         }
     }
 
@@ -97,7 +106,7 @@ public class Food : MonoBehaviour
         else
             foodEffect = -1;
 
-        Debug.Log("New food effect: " + foodEffect + " segment(s)");
+        //Debug.Log("New food effect: " + foodEffect + " segment(s)");
     }
 
     public void Eat(Snake eatingSnake, Snake2 eatingSnake2)
@@ -109,7 +118,7 @@ public class Food : MonoBehaviour
             else if (eatingSnake2 != null)
                 eatingSnake2.Grow();
 
-            Debug.Log("GOOD FOOD: Grew by 1 segment!");
+            //Debug.Log("GOOD FOOD: Grew by 1 segment!");
         }
         else if (foodEffect == 2)
         {
@@ -124,7 +133,7 @@ public class Food : MonoBehaviour
                 eatingSnake2.Grow();
             }
 
-            Debug.Log("GOOD FOOD: Grew by 2 segments!");
+            //Debug.Log("GOOD FOOD: Grew by 2 segments!");
         }
         else if (foodEffect == -1)
         {
@@ -133,7 +142,7 @@ public class Food : MonoBehaviour
             else if (eatingSnake2 != null)
                 eatingSnake2.Shrink();
 
-            Debug.Log("BAD FOOD: Lost 1 segment!");
+            //Debug.Log("BAD FOOD: Lost 1 segment!");
         }
 
         RandomisePosition();
@@ -143,13 +152,13 @@ public class Food : MonoBehaviour
     {
         if (gridArea == null)
         {
-            Debug.LogError("Food is missing its Grid Area!");
+            //Debug.LogError("Food is missing its Grid Area!");
             return;
         }
 
         Bounds bounds = gridArea.bounds;
 
-        moveSpeed = Random.Range(0.2f, 5f);
+        moveSpeed = Random.Range(0.5f, 8f);
         RandomiseEffect();
 
         for (int i = 0; i < 100; i++)
@@ -183,6 +192,6 @@ public class Food : MonoBehaviour
             }
         }
 
-        Debug.LogWarning("No free position found for food.");
+        //Debug.LogWarning("No free position found for food.");
     }
 }

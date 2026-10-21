@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodSpawner
   foodPrefab: {fileID: 1406060357}
-  foodCount: 5
+  foodCount: 8
 --- !u!1 &962302026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3690,7 +3690,6 @@ SceneRoots:
   - {fileID: 1487117394}
   - {fileID: 1431457605}
   - {fileID: 962302029}
-  - {fileID: 1406060360}
   - {fileID: 1038968791}
   - {fileID: 1837318450}
   - {fileID: 410020638}
@@ -3704,3 +3703,4 @@ SceneRoots:
   - {fileID: 963341390}
   - {fileID: 1869316813}
   - {fileID: 1699187934}
+  - {fileID: 1406060360}
