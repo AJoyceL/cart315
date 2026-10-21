@@ -229,7 +229,7 @@ private void FindFood()
             if (food != null)
             {
                 Debug.Log("AI Snake ate food!");
-                food.Eat(null, this);
+                food.Eat(null, null); //replaced 2nd null with this to use
             }
             else
             {

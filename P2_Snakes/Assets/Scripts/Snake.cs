@@ -128,23 +128,22 @@ public class Snake : MonoBehaviour
  
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Snake collided with: " + other.name +
-                " | Tag: " + other.tag);
+        //Debug.Log("Snake collided with: " + other.name + " | Tag: " + other.tag);
 
         if (other.CompareTag("Food"))
         {
-            Debug.Log("Food detected! Trying to eat.");
+            //Debug.Log("Food detected! Trying to eat.");
 
             Food food = other.GetComponent<Food>();
 
             if (food != null)
             {
-                Debug.Log("Food component found. Calling Eat().");
+                ////Debug.Log("Food component found. Calling Eat().");
                 food.Eat(this, null);
             }
             else
             {
-                Debug.LogError("The object tagged Food has no Food.cs component!");
+                ////Debug.LogError("The object tagged Food has no Food.cs component!");
             }
         }
         else if (other.CompareTag("Wall"))

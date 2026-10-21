@@ -8,9 +8,8 @@ public class Food : MonoBehaviour
     private float moveSpeed;
 
     private Snake snake;
-    private AISnake aiSnake;
+    private Snake2 snake2;
     private Vector2 targetPosition;
-
     private int foodEffect;
 
     private Rigidbody2D rb;
@@ -19,7 +18,7 @@ public class Food : MonoBehaviour
     private void Awake()
     {
         snake = FindFirstObjectByType<Snake>();
-        aiSnake = FindFirstObjectByType<AISnake>();
+        snake2 = FindFirstObjectByType<Snake2>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,20 +30,6 @@ public class Food : MonoBehaviour
         RandomisePosition();
         PickRandomTarget();
     }
-
-    // private void Update()
-    // {
-    //     transform.position = Vector2.MoveTowards(
-    //         transform.position,
-    //         targetPosition,
-    //         moveSpeed * Time.deltaTime
-    //     );
-
-    //     if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
-    //     {
-    //         PickRandomTarget();
-    //     }
-    // }
 
     private void Update()
     {
@@ -72,13 +57,21 @@ public class Food : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle") ||
             collision.gameObject.CompareTag("Wall"))
         {
-            // Choose a new direction after hitting a wall.
-            PickRandomTarget();
+            ContactPoint2D contact = collision.GetContact(0);
+
+            moveDirection = Vector2.Reflect(
+                moveDirection,
+                contact.normal
+            ).normalized;
+
+            targetPosition = rb.position + moveDirection * 5f;
         }
     }
-    
+
     private void PickRandomTarget()
     {
+        if (gridArea == null) return;
+
         Bounds bounds = gridArea.bounds;
 
         targetPosition = new Vector2(
@@ -98,29 +91,23 @@ public class Food : MonoBehaviour
         int random = Random.Range(0, 3);
 
         if (random == 0)
-        {
             foodEffect = 1;
-        }
         else if (random == 1)
-        {
             foodEffect = 2;
-        }
         else
-        {
             foodEffect = -1;
-        }
 
         Debug.Log("New food effect: " + foodEffect + " segment(s)");
     }
 
-    public void Eat(Snake eatingSnake, AISnake eatingAISnake)
+    public void Eat(Snake eatingSnake, Snake2 eatingSnake2)
     {
         if (foodEffect == 1)
         {
             if (eatingSnake != null)
                 eatingSnake.Grow();
-            else if (eatingAISnake != null)
-                eatingAISnake.Grow();
+            else if (eatingSnake2 != null)
+                eatingSnake2.Grow();
 
             Debug.Log("GOOD FOOD: Grew by 1 segment!");
         }
@@ -131,10 +118,10 @@ public class Food : MonoBehaviour
                 eatingSnake.Grow();
                 eatingSnake.Grow();
             }
-            else if (eatingAISnake != null)
+            else if (eatingSnake2 != null)
             {
-                eatingAISnake.Grow();
-                eatingAISnake.Grow();
+                eatingSnake2.Grow();
+                eatingSnake2.Grow();
             }
 
             Debug.Log("GOOD FOOD: Grew by 2 segments!");
@@ -143,8 +130,8 @@ public class Food : MonoBehaviour
         {
             if (eatingSnake != null)
                 eatingSnake.Shrink();
-            else if (eatingAISnake != null)
-                eatingAISnake.Shrink();
+            else if (eatingSnake2 != null)
+                eatingSnake2.Shrink();
 
             Debug.Log("BAD FOOD: Lost 1 segment!");
         }
@@ -162,7 +149,6 @@ public class Food : MonoBehaviour
 
         Bounds bounds = gridArea.bounds;
 
-        // Change speed and effect whenever the food resets.
         moveSpeed = Random.Range(0.2f, 5f);
         RandomiseEffect();
 
@@ -181,12 +167,16 @@ public class Food : MonoBehaviour
             bool occupiedByPlayer =
                 snake != null && snake.Occupies(x, y);
 
-            bool occupiedByAI =
-                aiSnake != null && aiSnake.Occupies(x, y);
+            bool occupiedByPlayer2 =
+                snake2 != null && snake2.Occupies(x, y);
 
-            if (!occupiedByPlayer && !occupiedByAI)
+            if (!occupiedByPlayer && !occupiedByPlayer2)
             {
                 transform.position = new Vector2(x, y);
+
+                if (rb != null)
+                    rb.position = new Vector2(x, y);
+
                 targetPosition = transform.position;
                 PickRandomTarget();
                 return;
