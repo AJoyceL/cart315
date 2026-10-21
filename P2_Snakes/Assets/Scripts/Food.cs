@@ -11,13 +11,16 @@ public class Food : MonoBehaviour
     private AISnake aiSnake;
     private Vector2 targetPosition;
 
-    // 1 = grow by 1, 2 = grow by 2, -1 = lose 1
     private int foodEffect;
+
+    private Rigidbody2D rb;
+    private Vector2 moveDirection;
 
     private void Awake()
     {
         snake = FindFirstObjectByType<Snake>();
         aiSnake = FindFirstObjectByType<AISnake>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -29,20 +32,51 @@ public class Food : MonoBehaviour
         PickRandomTarget();
     }
 
+    // private void Update()
+    // {
+    //     transform.position = Vector2.MoveTowards(
+    //         transform.position,
+    //         targetPosition,
+    //         moveSpeed * Time.deltaTime
+    //     );
+
+    //     if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+    //     {
+    //         PickRandomTarget();
+    //     }
+    // }
+
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(
-            transform.position,
-            targetPosition,
-            moveSpeed * Time.deltaTime
-        );
+        if (rb == null) return;
 
-        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        moveDirection = (targetPosition - rb.position).normalized;
+
+        if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
         {
             PickRandomTarget();
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (rb == null) return;
+
+        rb.MovePosition(
+            rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime
+        );
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle") ||
+            collision.gameObject.CompareTag("Wall"))
+        {
+            // Choose a new direction after hitting a wall.
+            PickRandomTarget();
+        }
+    }
+    
     private void PickRandomTarget()
     {
         Bounds bounds = gridArea.bounds;
