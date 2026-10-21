@@ -8,5 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Snake.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/WinPurple.unity
+    guid: 9fa856b4e8fde4723aec51607f586600
+  - enabled: 1
+    path: Assets/Scenes/WinBlue.unity
+    guid: 9d62d4631da704171b4562412b096353
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 470203357dccf40019d32c820ed0e801
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

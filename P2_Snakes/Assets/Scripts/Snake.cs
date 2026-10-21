@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Snake : MonoBehaviour
@@ -77,12 +78,23 @@ public class Snake : MonoBehaviour
         // Set the next update time based on the speed
         nextUpdate = Time.time + (1f / (speed * speedMultiplier));
     }
-
+    
+    // loads win scene
+    private void LoadWinScene()
+    {
+        SceneManager.LoadScene("WinBlue");
+    }
+    
     public void Grow()
     {
         Transform segment = Instantiate(segmentPrefab);
         segment.position = segments[segments.Count - 1].position;
         segments.Add(segment);
+
+        if (segments.Count >= 15)
+        {
+            LoadWinScene();
+        }
     }
 
     public void Shrink()
@@ -182,5 +194,4 @@ public class Snake : MonoBehaviour
 
         transform.position = position;
     }
-
 }

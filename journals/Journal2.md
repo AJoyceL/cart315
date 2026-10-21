@@ -86,4 +86,31 @@ ps. changed the name of my original Hide_and_seek file and made a duplicate of t
 
 ___
  
-### Oct
+### Oct 21
+
+Talked to Nerly today, and she gave me an idea after seeing her variation: what if I added obstacles like the ones seen in Bad Ice-cream. It's a nostalgic game that I used to ALWAYS play as a kid.
+
+Step 1: I added obstacles, gave them the tag: Obstacle + Box Collider 2D + Rigidbody 2D so that it'll affect the snakes. Then added Rigidbody 2D to food so that it bounces off the obstacle walls. 
+Update: It works! Though the AISnake doesn't see the obstacles and keeps hitting it. I'll have to code it to dodge or move around them, if possible. 
+
+Step 2: Removed the AISnake and replaced it with a 2nd player.
+Update: I thought it best to just completely remove the AI to ecourage the player to interact with someone else to play the game. In a way it could create an air of competitiveness between players where they could either focus on catching the most food, or killing each other between eating to ensure that they get the most points. I might have to add a wining screen and a starting screen. 
+Problem: The food isn't bouncing off the obstacles, I'll have to fix this.
+
+Step 3: Fix food bounce against obstacle.
+Update: the proble wa that i was using OnCollision, I switched it to OnTrigger and it worked. Food now bounce off the walls when they hit it.
+
+Step 4: Added start scene.
+Update: I added the start scene with a On Click() btn that sends the player to the game scene. It starts so abruptly that I have to change the snakes to start moving after a few seconds.
+
+Step 5: time delay on snake.
+Update: Gave the snakes a time delay of 2 seconds before the snakes start moving. Now all that's lef tis the ending scene.
+
+Stap 6: Created win scenes.
+Update: I created 2 win scenes that are called depending on who the winner is. If blue reaches 15 segements, WinBlue is called; if purple reaches 15 segements, WinPurple is called. They both have different colours and text.
+
+I think I'm actually done now, I switched the colours for the walls, obstacles and food, but everythings is finalised. Next time, I'll try not to underestimate how hard my idea is. Better to plan in advance next time too.
+
+___
+
+###
