@@ -10,6 +10,7 @@ public class Snake : MonoBehaviour
     public float speedMultiplier = 1f;
     public int initialSize = 4;
     public bool moveThroughWalls = false;
+    private float startTime;
 
     private readonly List<Transform> segments = new List<Transform>();
     private Vector2Int input;
@@ -18,6 +19,7 @@ public class Snake : MonoBehaviour
     private void Start()
     {
         ResetState();
+        startTime = Time.time + 1f;
     }
 
     private void Update()
@@ -44,6 +46,11 @@ public class Snake : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Time.time < startTime)
+        {
+            return;
+        }
+
         // Wait until the next update before proceeding
         if (Time.time < nextUpdate) {
             return;
