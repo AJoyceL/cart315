@@ -26,7 +26,6 @@ the first thing I did was the player movement. Taking from the Paddle's script a
 Then I worked on the camera since it was essential if I wanted to be able to see what the game scene looked like. I found this [reference](https://www.codemahal.com/making-the-camera-follow-the-player-2d-unity) to allow the camera to follow the player. Since I only needed the camera to follow a horizontal path, I just too what I needed.
 Finally, the hardest part was the monster's movement. I couldn't find much of what I wanted, but a few good references were by [Generalist Programmer](https://youtu.be/8mTY7_WMPG8?si=tL5YcvFbuHbJ4Nab), by [Unity](https://discussions.unity.com/t/enemy-line-of-sight-with-raycast2d/865347) and this one by [Lost Relic Games](https://youtu.be/2VX8uD_xUlM?si=WC0vW-LnLGyFRRlT).
 The last one being very helpful to deal with the line of sight by using Raycaster. Though I used Headers instead of SerialisedFields because I was using field objects.
-Despite having all these references, I still couldn't make the monster move behind the walls and blocks because of the boc collider, but fortunetaly, ChatGPT showed me I could add object layers and change what it interacts with through the Project Setting > Physics2. By unchecking where my Monster, Player and VisionBlocker layer intersect, I got it fixed. This took the longest to get working, but it was worhtwhile seeing my monstyer game object work as I wanted it to. 
 
 I'll leave the catching, restarting and end game scene for another day. 
 
@@ -34,14 +33,14 @@ ___
 
 ### Oct 16
 
-Logged on to do some debugging before I left for the cinema to watch Resident Evil. I reworked the monster's prtrol function to get it to consistently walk back and forth between Point A and Point B. That was all I worked on today, but I'm planning on make the player move slower and without acceleration or make it slower(it makes sense for a child to rush to the bathroom when the path feels safe and clear, but children aren't often that fast). I'll also have to make the scene reset when the monster catches the player, add and endgame scene and probably find assets to replace the player and the monster.
+Logged on to do some debugging before I left for the cinema to watch Resident Evil. I reworked the monster's patrol function to get it to consistently walk back and forth between Point A and Point B. That was all I worked on today, but I'm planning on make the player move slower and without acceleration or make it slower(it makes sense for a child to rush to the bathroom when the path feels safe and clear, but children aren't often that fast). I'll also have to make the scene reset when the monster catches the player, add and endgame scene and probably find assets to replace the player and the monster.
 
 ___
 
 ### Oct 18
 
-I tried to make the player reset it's position whenever the monster catches it, but it won't work. Anything I do won't work an dI'm getting really frustrated. I'll just drop this and restart a new prototype. Hopefully I can make it with 3 days left, bevause I'm really fed up with all the problems popping up.
-I'm either going to work on the Bricks or Snake game since they're the ones I find more interesting, especially the snake. 
+I tried to make the player reset it's position whenever the monster catches it, but it won't work. Anything I do won't work and I'm getting really frustrated. I'll just drop this for now(I'll probably return to it in my own time) and restart a new prototype. Hopefully I can make it with 3 days left, because I'm really fed up with all the problems popping up.
+I'm either going to work on the Snake game since they're the ones I find more interesting, especially the snake. 
 I'm already getting ideas:
 - make the snake eat moving blocks,
 - make multiple spawn at the same time
@@ -107,10 +106,9 @@ Step 5: time delay on snake.
 Update: Gave the snakes a time delay of 2 seconds before the snakes start moving. Now all that's lef tis the ending scene.
 
 Stap 6: Created win scenes.
-Update: I created 2 win scenes that are called depending on who the winner is. If blue reaches 15 segements, WinBlue is called; if purple reaches 15 segements, WinPurple is called. They both have different colours and text.
+Update: I created 2 win scenes that are called depending on who the winner is. If blue reaches 15 segements, WinBlue is called; if purple reaches 15 segements, WinPurple is called. They both have different colours and text. I did get stuck though when I tried to load the Win scene and received the message: *To add a scene to the active build profile or shared scene list use the menu File->Build Profiles UnityEngine.SceneManagement.SceneManager:LoadScene (string) WinScene:LoadGame () (at Assets/Scripts/WinScene.cs:15) UnityEngine.EventSystems.EventSystem:Update ()*. I had to look online, but figured it out in the end.
 
 I think I'm actually done now, I switched the colours for the walls, obstacles and food, but everythings is finalised. Next time, I'll try not to underestimate how hard my idea is. Better to plan in advance next time too.
 
 ___
 
-###
