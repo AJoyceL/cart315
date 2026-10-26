@@ -9,3 +9,9 @@ Since I don't have time to play them, I'm taking inspirationfrom the video clips
 Horror games were a big part of my childhood, so I'm more inclined to work on a project leaning towards the horror theme/genre.
 
 I was attracted to *Liminal Gallery* and *POOLS* for the liminal and uncany atmosphere. I'm familiar with *POOLS*, a game inspired by *The Backrooms* by Kane Parsons. I like the isolation and surrealism liminal games create, although I won't be making anythign as extensive as these inspirations, I want to try and capture the atmosphere.
+
+I built a looping maze without any dead ends to mimic the uncanny feeling of a liminal room. I'll add materials, textures, lighting, sound and more tomorrow and over the days to at least have something presentable.
+
+___
+
+### Oct
