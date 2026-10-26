@@ -14,4 +14,8 @@ I built a looping maze without any dead ends to mimic the uncanny feeling of a l
 
 ___
 
-### Oct
+### Oct 26
+
+Created a 3D object for theplayer so that the camera has someone to follow. It'll be set as a 1st person view.
+
+I found a [reference](https://pastecode.io/s/x9v7iq1p) for a first person camera and player movmeent. After testing and debuging it, I increased the Field of View to 100 to add that liminal feel that *POOLS* has, like everyhting is so far and msiformed, yet still tangible.
