@@ -1,0 +1,64 @@
+Whisper Sample Pack
+Vadim Nickel, 2016
+hello@vadimnickel.com
+
+All sounds are original recordings, unless listed below.
+Non-commercial use of this sound pack is granted. For everything else, contact the author.
+
+Following is a list of sounds that were sourced from freesound.org.
+They are all under a CC attribution license, found here: http://creativecommons.org/licenses/by/3.0/
+
+
+Knock
+
+Ball
+68650__mikaelfernstrom__ballkick.wav
+
+Hit
+
+Glass
+93964__cgeffex__smashing-up-beer-bottles
+
+Ball
+68651__mikaelfernstrom__balltiles
+
+Water Splash Medium
+17832__dynamicell__water-splash-objects-falling
+
+Water Splash Big (Player)
+98335__cgeffex__large-splashes
+
+
+Footsteps
+
+Sand
+141517__cheeseheadburger__white-sands-footsteps
+
+
+Itemloops
+
+Mall alarm
+267135__claudius__door-alarm-from-city-shop
+
+Dog pant
+215765__stevenpam__dog-panting
+
+River stream
+124733__andy-gardner__river1
+
+Bus 2
+144007__cdltbz__starting-idling-and-reving-of-a-bus-engine
+
+
+Ambient
+Island Main
+234054__owl__grisslehamn-waves-and-gulls-long
+
+Country Evening Main
+198404__tomlija__august-night-on-countryside-zlatibor-serbia
+
+Train Engine
+94216__benboncan__steam-train-1
+
+Train Wind Main
+84111__benboncan__wind-on-door-short
