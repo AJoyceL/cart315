@@ -26,4 +26,7 @@ I added a temporary pool that I'll hvae ot find textures for and a room filled w
 
 ___
 
-### Oct 
+### Oct 27
+
+Added materials and textures to the pool. I found the tiles textures in Poly Haven too. Then I tried to create a small forest inside the maze, a few trees with bushes and a bench, and a camping table in a random room. I was going for a park aesthetic inside of a liminal space and I think it should work for now. 
+I'll add sounds later today, need to eat since it's nearing 2pm.
