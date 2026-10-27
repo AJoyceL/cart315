@@ -30,3 +30,22 @@ ___
 
 Added materials and textures to the pool. I found the tiles textures in Poly Haven too. Then I tried to create a small forest inside the maze, a few trees with bushes and a bench, and a camping table in a random room. I was going for a park aesthetic inside of a liminal space and I think it should work for now. 
 I'll add sounds later today, need to eat since it's nearing 2pm.
+
+Downloaded soudns from [Freesound](https://freesound.org/people/co5oo/sounds/861346/) for my project. I downloaded a few and renamed them to better remember which went where.
+1. [Static](https://freesound.org/people/habibieamrullah/sounds/799594/)
+2. [Sample](https://freesound.org/people/exhapax/sounds/570146/) for future use
+3. [Bird Park](https://freesound.org/people/janislylove/sounds/427872/)
+5. [Park Talking](https://freesound.org/people/kevp888/sounds/578742/)
+6. [Rettro/Classic music](https://freesound.org/people/ZHRØ/sounds/668879/)
+7. [Composite sound](https://freesound.org/people/co5oo/sounds/861347/)
+8. [Forest Sound](https://freesound.org/people/klankbeeld/sounds/624474/)
+9. [Pool Sound](https://freesound.org/people/mfma_sonic/sounds/485047/)
+10. [Forest Sound](https://freesound.org/people/bartoszmatenko/sounds/515332/)
+
+I've used some and others are saved for future projects or just sounds thta I switched out. I placed all soudns in empty objects and adjusted the 3D spacial sounds's mix and max distance. This way, the player can only hear these sounds within a certain bound. It took a while to tweak things out, but I think I ended up with somethign coherent while playtesting it. 
+While I do have some spots without any sound, it was purposeful to put mor emphasis on the rooms *with* sounds. 
+I'm satisfied with what I currently have, if I have any more ideas, I'll add more until the due date.
+
+___
+
+###
