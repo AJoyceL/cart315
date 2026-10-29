@@ -52,3 +52,7 @@ ___
 
 Before class starts, I adjusted some object placements to add more to the liminal feel that the Backroom has with displaced objects stuck to walls and ceilings. I also added stairs that lead nowhere. I might add more things until the deadline.
 
+After seeing everyone's prototype, it made think of how I could improve on my current work. 
+Option 1 is to utilise the footsteps to add sound cues for players, it adds a bit more depth than silent steps. 
+Option 2 is to rework my lighting to make the pool tiles more reflective, doing so would come closer to my actual inspiration of *POOLS*, given that the lighting doesn't come from a specific source, but reflects on every surface. 
+
