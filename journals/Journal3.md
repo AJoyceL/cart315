@@ -48,4 +48,7 @@ I'm satisfied with what I currently have, if I have any more ideas, I'll add mor
 
 ___
 
-###
+### Oct 29
+
+Before class starts, I adjusteds some object placements to add more to the liminal feel that the Backroom has with displaced objects stuck to walls and ceilings. I also added stairs that lead nowhere. I might add more things until the deadline.
+
