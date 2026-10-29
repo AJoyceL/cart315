@@ -10,19 +10,19 @@ Horror games were a big part of my childhood, so I'm more inclined to work on a 
 
 I was attracted to *Liminal Gallery* and *POOLS* for the liminal and uncany atmosphere. I'm familiar with *POOLS*, a game inspired by *The Backrooms* by Kane Parsons. I like the isolation and surrealism liminal games create, although I won't be making anythign as extensive as these inspirations, I want to try and capture the atmosphere.
 
-I built a looping maze without any dead ends to mimic the uncanny feeling of a liminal room. I'll add materials, textures, lighting, sound and more tomorrow and over the days to at least have something presentable.
+I built a looping maze without any dead ends to mimic the uncanny feeling of a liminal room. It seems a bit large at the moment, but I'll adjust the map size as I go: deleting walls and resize the overall size. I'll add materials, textures, lighting, sound and more tomorrow and over the days to at least have something presentable.
 
 ___
 
 ### Oct 26
 
-Created a 3D object for theplayer so that the camera has someone to follow. It'll be set as a 1st person view.
+Created a capsule for the player so that the camera has someone to follow, set in 1st person.
 
-I found a [reference](https://pastecode.io/s/x9v7iq1p) for a first person camera and player movmeent. After testing and debuging it, I increased the Field of View to 100 to add that liminal feel that *POOLS* has, like everyhting is so far and msiformed, yet still tangible.
+I found a [reference](https://pastecode.io/s/x9v7iq1p) for a first person camera and player movmeent. After testing and debuging it, I increased the Field of View to 100 to add that liminal feel that *POOLS* has, like everyhting is so far and msiformed, yet still tangible. 
 
 I found materials and textures for the walls and floor from [Poly Haven](https://polyhaven.com/a/weathered_peeling_timber). 
 I changed the light setting, I'll have to rework that later. 
-I added a temporary pool that I'll hvae ot find textures for and a room filled with columns, but I'll add more explorable rooms with sounds later or another day.
+I added a pool that I'll have it find textures for and a room filled with columns to add to the randomness, but I'll add more objects to the map. 
 
 ___
 
@@ -50,5 +50,5 @@ ___
 
 ### Oct 29
 
-Before class starts, I adjusteds some object placements to add more to the liminal feel that the Backroom has with displaced objects stuck to walls and ceilings. I also added stairs that lead nowhere. I might add more things until the deadline.
+Before class starts, I adjusted some object placements to add more to the liminal feel that the Backroom has with displaced objects stuck to walls and ceilings. I also added stairs that lead nowhere. I might add more things until the deadline.
 
