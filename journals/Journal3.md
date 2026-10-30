@@ -22,6 +22,7 @@ I found a [reference](https://pastecode.io/s/x9v7iq1p) for a first person camera
 
 I found materials and textures for the walls and floor from [Poly Haven](https://polyhaven.com/a/weathered_peeling_timber). 
 I changed the light setting, I'll have to rework that later. 
+I picked worn and old textures because I wanted to create an old and dilapitated building. Mostly because it would fit the horro theme I was hoping for, but because it would contrast with the bright and saturated colours of the trees I was planning to add. This again, rewinds back to liminal space, to feel how odd or eerie it feels to have bright and saturated objects in a run-down building.
 I added a pool that I'll have it find textures for and a room filled with columns to add to the randomness, but I'll add more objects to the map. 
 
 ___
@@ -55,4 +56,5 @@ Before class starts, I adjusted some object placements to add more to the limina
 After seeing everyone's prototype, it made think of how I could improve on my current work. 
 Option 1 is to utilise the footsteps to add sound cues for players, it adds a bit more depth than silent steps. 
 Option 2 is to rework my lighting to make the pool tiles more reflective, doing so would come closer to my actual inspiration of *POOLS*, given that the lighting doesn't come from a specific source, but reflects on every surface. 
+Option 3 I was reminded of adding reverbs to the sounds, I'll have to do that when I get home.
 
