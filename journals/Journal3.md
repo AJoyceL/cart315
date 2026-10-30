@@ -58,3 +58,13 @@ Option 1 is to utilise the footsteps to add sound cues for players, it adds a bi
 Option 2 is to rework my lighting to make the pool tiles more reflective, doing so would come closer to my actual inspiration of *POOLS*, given that the lighting doesn't come from a specific source, but reflects on every surface. 
 Option 3 I was reminded of adding reverbs to the sounds, I'll have to do that when I get home.
 
+___
+
+### Oct 30
+
+Following recommendations, I added reverbs of different presets to accompany my sounds. 
+Using this script as [reference](https://www.youtube.com/watch?v=uNYF1gsvD1A), I added footsteps to finalise my prototype. I increased the spread of the footstep audio to make the walking sim feel expansive, it gives it the feeling of being stuck in an echoing location. I wanted to add to the embience, 
+
+___ 
+
+
