@@ -12,5 +12,6 @@ My repository for my Game Design class conraining all my journals, readings/refl
 
 - My projects are:
 1. P1_Pong
-2.  P2_Snakes
-3. [tbh]
+2. P2_Snakes
+3. P3_Walking
+4. [tbh]
