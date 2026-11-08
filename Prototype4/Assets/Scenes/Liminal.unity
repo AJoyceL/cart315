@@ -641,6 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 84521275}
   - component: {fileID: 84521274}
+  - component: {fileID: 84521276}
   m_Layer: 0
   m_Name: MonsterTrigger
   m_TagString: Untagged
@@ -684,6 +685,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &84521276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84521273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcda8ff57fd1f46058dc587abecb69a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterRotate
+  rotationAngle: -45
+  monster: {fileID: 1418726217}
 --- !u!1 &112111943
 GameObject:
   m_ObjectHideFlags: 0
@@ -11617,7 +11632,7 @@ MeshRenderer:
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
@@ -12962,7 +12977,7 @@ GameObject:
   - component: {fileID: 1682744513}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12976,7 +12991,7 @@ Transform:
   m_GameObject: {fileID: 1682744507}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.87, y: 1, z: -0.4}
+  m_LocalPosition: {x: -7.96, y: 1, z: 7.6}
   m_LocalScale: {x: 0.8, y: 1, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13086,7 +13101,7 @@ MonoBehaviour:
   isGrounded: 1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   footsteps: {fileID: 690822878}
 --- !u!54 &1682744513
 Rigidbody:
