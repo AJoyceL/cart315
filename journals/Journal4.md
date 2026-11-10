@@ -33,4 +33,11 @@ I'm thinking of using the last reference I found to make chairs float anf rotate
 
 ___ 
 
-### Nov
+### Nov 10
+
+I started with making a somewhat realistic bench. I picked a park bench out of all possible furnitures becuase it would fit in with the forest and park theme I was going for. All parks have benches. 
+
+I followed the [reference](https://www.youtube.com/watch?v=LnQudtIKfnw) and created a new script for rotating the park benches to make it follow the player as they move around. I called an object target to target the player object. Then used LookAt() to control the rotation.
+
+For now, it does what I want it to do, constantly following the player in an unerving way. I might duplicate this script for other objects, but I have 2 test examples in the walking sim at the moment. 
+If it fits, I'll add more objects to add to the ambience of a Liminal space. 
