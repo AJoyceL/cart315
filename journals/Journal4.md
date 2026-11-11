@@ -41,3 +41,9 @@ I followed the [reference](https://www.youtube.com/watch?v=LnQudtIKfnw) and crea
 
 For now, it does what I want it to do, constantly following the player in an unerving way. I might duplicate this script for other objects, but I have 2 test examples in the walking sim at the moment. 
 If it fits, I'll add more objects to add to the ambience of a Liminal space. 
+
+___
+
+### Nov 11
+
+I replaced the last bench with the rotating one and added 2 park benches to the forest to add more environemental interaction with the player.
