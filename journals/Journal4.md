@@ -47,3 +47,19 @@ ___
 ### Nov 11
 
 I replaced the last bench with the rotating one and added 2 park benches to the forest to add more environemental interaction with the player.
+
+I decided to replace my old script with the given Cart315 First Player prefab. It worked smoother nd cleaner than my current script:
+- The player footstep didn't have a delay.
+- The player jump is always called when I press space.
+- The movement was smoother and easier to control.
+
+I alo decided not to add sound to the peerping monster because I want it to stay a surprise. I feel like it would be better if it was a soundless pop up when the player turns around rather than a loud boom. It would be less surprising to catch it from th ecorner of the eye rather than looking for a sound when you can't find the source.
+
+___
+
+### Nov 12
+
+After listening to the class lesson, I think I might use terrain and visual colours to nudge the player to follow a path. I might add bright and contrasting or assets to use and draw a path to follow. 
+
+
+
