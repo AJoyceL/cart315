@@ -61,5 +61,5 @@ ___
 
 After listening to the class lesson, I think I might use terrain and visual colours to nudge the player to follow a path. I might add bright and contrasting or assets to use and draw a path to follow. 
 
-
+I added grass sparcely to show a path to follow without forcing it. A subtle yellow rather than a bright and attention-grabbing red.
 
