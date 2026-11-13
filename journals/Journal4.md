@@ -39,7 +39,8 @@ I started with making a somewhat realistic bench. I picked a park bench out of a
 
 I followed the [reference](https://www.youtube.com/watch?v=LnQudtIKfnw) and created a new script for rotating the park benches to make it follow the player as they move around. I called an object target to target the player object. Then used LookAt() to control the rotation.
 
-For now, it does what I want it to do, constantly following the player in an unerving way. I might duplicate this script for other objects, but I have 2 test examples in the walking sim at the moment. 
+For now, it does what I want it to do, constantly following the player in an unerving way. It plays into the idea that parks, while peaceful and relaxing, is still a public space and there will always be someone watching you. It can make paranoid or anxious people even more fearful of walkign around.
+I might duplicate this script for other objects, but I have 2 test examples in the walking sim at the moment. 
 If it fits, I'll add more objects to add to the ambience of a Liminal space. 
 
 ___
@@ -69,4 +70,5 @@ I decided to add a fake exit door that'll send players back to the start when co
 I used a OntriggerEnter to call the reset at an empty object spawnpoint. It's not working at the moment, but I'll fix it later or tomorrow. 
 
 However, if I don't have enough enhancement, I'm thinking of addign an actual monster that walks around the place and will chase the player. I'll find reference scripts before I start this.
+After presenting, Vladim told me it would be a good idea to add the monster. I might also add things to collect around the map in order to escape, such as keys to unlock the exit door. This way it'll give players a reason to explore and try to dodge the big monster.
 
