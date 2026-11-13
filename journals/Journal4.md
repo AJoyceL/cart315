@@ -63,3 +63,5 @@ After listening to the class lesson, I think I might use terrain and visual colo
 
 I added grass sparcely to show a path to follow without forcing it. A subtle yellow rather than a bright and attention-grabbing red.
 
+I downloaded a VFX dust asset from the store. I wanted to enhance the image of a dark and danky environment. The players stirs dust up as they walk, the VFX follows the player and leaves a trail behind and around. 
+
