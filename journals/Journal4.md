@@ -65,3 +65,8 @@ I added grass sparcely to show a path to follow without forcing it. A subtle yel
 
 I downloaded a VFX dust asset from the store. I wanted to enhance the image of a dark and danky environment. The players stirs dust up as they walk, the VFX follows the player and leaves a trail behind and around. 
 
+I decided to add a fake exit door that'll send players back to the start when collided with. It's a play on how the backrooms is infinite. I made it a bright red so that it attracts attention and calls the player to see what it is. 
+I used a OntriggerEnter to call the reset at an empty object spawnpoint. It's not working at the moment, but I'll fix it later or tomorrow. 
+
+However, if I don't have enough enhancement, I'm thinking of addign an actual monster that walks around the place and will chase the player. I'll find reference scripts before I start this.
+
