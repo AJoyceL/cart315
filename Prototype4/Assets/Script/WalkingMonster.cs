@@ -17,17 +17,36 @@ public class WalkingMonster : MonoBehaviour
     bool walkpointSet;
     [SerializeField] float range;
 
+    //state change
+    [SerializeField] float sightRange, atkRange;
+    bool playerInSight, playerInAtkRange;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Patrol();   
+        playerInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
+        playerInAtkRange = Physics.CheckSphere(transform.position, atkRange, playerLayer);
+
+        if (!playerInSight && !playerInAtkRange) Patrol();   
+        if (playerInSight && playerInAtkRange) Chase();
+        if (!playerInSight && playerInAtkRange)Attack();
+    }
+
+    void Chase()
+    {
+        Agent.SetDestination(player.transform.position);
+    }
+
+    void Attack()
+    {
+        
     }
 
     void Patrol()

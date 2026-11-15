@@ -78,6 +78,11 @@ ___
 
 I found a [youtube video reference](https://www.youtube.com/watch?v=-Iwsz4gdgyQ&t=2s) for a pathfinding object in Unity 3D. 
 
-I followed the video just as it shows and adapted some the Range to my walking range for the monster. For now, it works, moving around the place and randomly chnaging directions. It creates an unexpected flair to the walking sim where you never know when and where the onster will appear sicne it doesn't have a predeterined destination or path.
+I followed the video just as it shows and adjusted some the Range to my walking range for the monster. For now, it works, moving around the place and randomly chnaging directions. It creates an unexpected flair to the walking sim where you never know when and where the onster will appear sicne it doesn't have a predeterined destination or path.
 
+This next [video](https://youtu.be/xtJgi8SblIk?si=K7_iwW_kO_-5_mun) shows how to make the monster chase the player. 
+
+Same as last time, I adjusted the values to fit my project. I also changed the way to find the player from player = GameObject.Find("Player"); to locate the specific object by name to player = GameObject.FindWithTag("Player"); to locate it by object Tag. 
+
+Here's the [attacking tutorial](https://youtu.be/DnIBoUBezeU?si=EW4yfQFPWCNJgbia) from the same youtube account.
 
