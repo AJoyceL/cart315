@@ -72,3 +72,12 @@ I used a OntriggerEnter to call the reset at an empty object spawnpoint. It's no
 However, if I don't have enough enhancement, I'm thinking of addign an actual monster that walks around the place and will chase the player. I'll find reference scripts before I start this.
 After presenting, Vladim told me it would be a good idea to add the monster. I might also add things to collect around the map in order to escape, such as keys to unlock the exit door. This way it'll give players a reason to explore and try to dodge the big monster.
 
+___
+
+### Nov 15
+
+I found a [youtube video reference](https://www.youtube.com/watch?v=-Iwsz4gdgyQ&t=2s) for a pathfinding object in Unity 3D. 
+
+I followed the video just as it shows and adapted some the Range to my walking range for the monster. For now, it works, moving around the place and randomly chnaging directions. It creates an unexpected flair to the walking sim where you never know when and where the onster will appear sicne it doesn't have a predeterined destination or path.
+
+
