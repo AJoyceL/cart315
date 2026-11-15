@@ -83,6 +83,7 @@ I followed the video just as it shows and adjusted some the Range to my walking 
 This next [video](https://youtu.be/xtJgi8SblIk?si=K7_iwW_kO_-5_mun) shows how to make the monster chase the player. 
 
 Same as last time, I adjusted the values to fit my project. I also changed the way to find the player from player = GameObject.Find("Player"); to locate the specific object by name to player = GameObject.FindWithTag("Player"); to locate it by object Tag. 
+The monster follows and will push around the player object when the player is within sight and range of 20. I've already set up the range for attacking, but haven't assigned anything in the Attack(). The next reference video will show me how to.
 
 Here's the [attacking tutorial](https://youtu.be/DnIBoUBezeU?si=EW4yfQFPWCNJgbia) from the same youtube account.
 
