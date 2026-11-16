@@ -87,3 +87,13 @@ The monster follows and will push around the player object when the player is wi
 
 Here's the [attacking tutorial](https://youtu.be/DnIBoUBezeU?si=EW4yfQFPWCNJgbia) from the same youtube account.
 
+I ended up only using the OnTriggerEnter of the video in my prototype to call the the EndScene to restart the scene. Since I'm not going for polished visuals with a fully animated moonster chasing the player, I kept it as a sphere. Then I added SceneManager.LoadScene to call a second scene I named EndScene to show that the player *Lost* if the creature catches them. 
+
+Instead of animations to indicate a change of state, I'm deciding to add audio cues for the player as well as proximity 3D audio:
+- [Walking](https://freesound.org/people/Victor_Natas/sounds/613038/)
+- [Chasing](https://freesound.org/people/chaos02330/sounds/555270/)
+- [Attacking](https://freesound.org/people/jvmyka@gmail.com/sounds/556273/)
+
+
+
+

@@ -2,6 +2,7 @@ using System.Runtime.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 
 public class WalkingMonster : MonoBehaviour
@@ -9,6 +10,8 @@ public class WalkingMonster : MonoBehaviour
     GameObject player;
 
     NavMeshAgent Agent;
+
+    BoxCollider boxCollider;
 
     [SerializeField] LayerMask groundLayer, playerLayer;
 
@@ -26,6 +29,7 @@ public class WalkingMonster : MonoBehaviour
     {
         Agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player");
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -34,9 +38,20 @@ public class WalkingMonster : MonoBehaviour
         playerInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         playerInAtkRange = Physics.CheckSphere(transform.position, atkRange, playerLayer);
 
-        if (!playerInSight && !playerInAtkRange) Patrol();   
-        if (playerInSight && playerInAtkRange) Chase();
-        if (!playerInSight && playerInAtkRange)Attack();
+        if (!playerInSight && !playerInAtkRange) 
+        {
+            Patrol();   
+        }
+
+        else if (playerInSight && playerInAtkRange) 
+        {
+            Chase();
+        }
+
+        else if (!playerInSight && playerInAtkRange)
+        {
+            Attack();
+        }
     }
 
     void Chase()
@@ -46,7 +61,8 @@ public class WalkingMonster : MonoBehaviour
 
     void Attack()
     {
-        
+        Agent.SetDestination(transform.position);
+        SceneManager.LoadScene("EndScene");
     }
 
     void Patrol()
@@ -66,6 +82,24 @@ public class WalkingMonster : MonoBehaviour
         if (Physics.Raycast(destPoint, Vector3.down, groundLayer))
         {
             walkpointSet = true;
+        }
+    }
+
+    void EnableAtk()
+    {
+       boxCollider.enabled = true; 
+    }
+
+    void DisableAtk()
+    {
+        boxCollider.enabled = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("EndScene");
         }
     }
 }
