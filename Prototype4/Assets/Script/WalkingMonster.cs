@@ -13,6 +13,10 @@ public class WalkingMonster : MonoBehaviour
 
     BoxCollider boxCollider;
 
+    public AudioSource walk;
+    public AudioSource chase;
+    private AudioSource currentAudio;
+
     [SerializeField] LayerMask groundLayer, playerLayer;
 
     //patrol
@@ -41,17 +45,32 @@ public class WalkingMonster : MonoBehaviour
         if (!playerInSight && !playerInAtkRange) 
         {
             Patrol();   
+            ChangeAudio(walk);
         }
 
         else if (playerInSight && playerInAtkRange) 
         {
             Chase();
+            ChangeAudio(chase);
         }
 
         else if (!playerInSight && playerInAtkRange)
         {
             Attack();
         }
+    }
+
+    void ChangeAudio(AudioSource newAudio)
+    {
+        if (currentAudio == newAudio) return;
+
+        if (currentAudio != null)
+        {
+            currentAudio.Stop();
+        }
+
+        currentAudio = newAudio;
+        currentAudio.Play();
     }
 
     void Chase()

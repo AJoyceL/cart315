@@ -94,6 +94,8 @@ Instead of animations to indicate a change of state, I'm deciding to add audio c
 - [Chasing](https://freesound.org/people/chaos02330/sounds/555270/)
 - [Attacking](https://freesound.org/people/jvmyka@gmail.com/sounds/556273/)
 
+I added seperate AudioSources for the walking and chasing audio. I called them using if statements to stop the previous audio and play the other one, and vice versa. 
 
+All that's left is to fix the fake exit gate.
 
 
