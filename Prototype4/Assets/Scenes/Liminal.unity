@@ -6462,10 +6462,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1656500101664370645, guid: 92efd63b18b726040a8e16e8643afde0, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 1600010293}
+      addedObject: {fileID: 1600010304}
     - targetCorrespondingSourceObject: {fileID: 1656500101664370645, guid: 92efd63b18b726040a8e16e8643afde0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1600010302}
+      addedObject: {fileID: 1600010303}
   m_SourcePrefab: {fileID: 100100000, guid: 92efd63b18b726040a8e16e8643afde0, type: 3}
 --- !u!4 &738476889 stripped
 Transform:
@@ -11818,8 +11818,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1361853582}
+  - component: {fileID: 1361853583}
   m_Layer: 0
-  m_Name: Respawm
+  m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11834,12 +11835,33 @@ Transform:
   m_GameObject: {fileID: 1361853581}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.7, y: -0, z: -0.07836}
+  m_LocalPosition: {x: 7.52, y: -0, z: 0.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1361853583
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361853581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1373482613
 GameObject:
   m_ObjectHideFlags: 0
@@ -13827,7 +13849,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1656500101664370645, guid: 92efd63b18b726040a8e16e8643afde0, type: 3}
   m_PrefabInstance: {fileID: 734503816}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1600010293
+--- !u!65 &1600010303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600010284}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1600010304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13840,19 +13883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitDoorReset
   spawnPoint: {fileID: 1361853582}
---- !u!114 &1600010302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600010284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af755bc71fbf149c8add5089c720d76e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExitDoorReset
-  spawnPoint: {fileID: 0}
+  player: {fileID: 569662848}
 --- !u!4 &1606979573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3539143555830713240, guid: fc3aa20ee3cfd4dbb8e127f2d102494c, type: 3}
@@ -17061,10 +17092,9 @@ GameObject:
   - component: {fileID: 2105109770}
   - component: {fileID: 2105109769}
   - component: {fileID: 2105109768}
-  - component: {fileID: 2105109772}
   m_Layer: 0
   m_Name: Exit
-  m_TagString: Obstacle
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17084,11 +17114,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2105109769
 MeshRenderer:
@@ -17162,19 +17192,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2105109772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105109767}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af755bc71fbf149c8add5089c720d76e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExitDoorReset
-  spawnPoint: {fileID: 1361853582}
 --- !u!1 &2112765291
 GameObject:
   m_ObjectHideFlags: 0
@@ -18309,6 +18326,7 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1361853582}
+  - {fileID: 2105109771}
   - {fileID: 734503816}
   - {fileID: 272803835}
   - {fileID: 1344508813}
@@ -18327,4 +18345,3 @@ SceneRoots:
   - {fileID: 1089442050}
   - {fileID: 276107011}
   - {fileID: 1441484540}
-  - {fileID: 2105109771}

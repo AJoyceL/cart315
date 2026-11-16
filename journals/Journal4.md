@@ -96,6 +96,12 @@ Instead of animations to indicate a change of state, I'm deciding to add audio c
 
 I added seperate AudioSources for the walking and chasing audio. I called them using if statements to stop the previous audio and play the other one, and vice versa. 
 
-All that's left is to fix the fake exit gate.
+All that's left is to fix the fake exit gate. I wanted to add it to give a false sense of hope.
+
+I tried using player.position = spawnPoint.position and other ways, but I still couldn't figure it out. I tried looking for references online or on youtube that fits my situation but I couldn't find *any*. I relly wanted it to work. 
+So I asked AI what I was doing wrogn without it rewriting the script for me. I explained my situation and it told me that the problem was probably the Character Controller. I had the disable the controller to respawn then enable it. 
+So that's what I did using if (controller != null) to first disable, the a second time to enable it. This way the controller will stop interfering with the player position.
+
+I think this is what I'll leave it at for my prototype.
 
 

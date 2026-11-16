@@ -3,12 +3,25 @@ using UnityEngine;
 public class ExitDoorReset : MonoBehaviour
 {
     public Transform spawnPoint;
+    public Transform player;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle"))
+        if (other.CompareTag("Finish"))
         {
-            transform.position = spawnPoint.position;
+            CharacterController controller = player.GetComponent<CharacterController>();
+
+            if (controller != null) 
+            {
+                controller.enabled = false;
+            }
+
+            player.position = spawnPoint.position;
+
+            if (controller != null)
+            {
+               controller.enabled = true;
+            }
         }
     }
 }
