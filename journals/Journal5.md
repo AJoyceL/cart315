@@ -19,4 +19,18 @@ In this case, I'm going to map larger than the camera view so that it follows th
 
 ___
 
-### Nov 
+### Nov 22
+
+I started brainstorming for ideas before starting anything. I was thinking of having using a task-based check to call the end of a shift rather than using time. This way, I can play as fast as I want without feeling rushed. It would give me time to explore and experience the whole scale of the prototype.
+
+*However*, it made me worry that if I implemented this, some players could spend too much time on a singular task without moving on.
+So a possible solution would to utilise both: 
+- I have a timer that gives players enough time to complete all their tasks, espcially towards the last days when players will have to face anomalies. 
+- I will still keep the task-based idea where players can end the night shift earlier if they complete all tasks. 
+
+I also thought of a few things and changes to the anomalies that appear over days. I asked: "What else can I add? Other than shadows and moving objects?"
+Then an idea poped up. What if towards the last 2 or 3 days, I had a monster/anomaly appear periodically to prevent the players from completing their tasks quickly? 
+The monster's appearence would be anounced by a sound effect or message, then it would patrol around the shop in an attempt to catch the player. If the player's caught, the day restarts. 
+It would appear periodically for 2 days, and on the last day, it would be constantly patroling the shop. 
+
+All of this would play over the vanishing objects and the anomalies. The player's goal would be to finish their tasks before the timer runs out *and* without being caught by the monster. 
