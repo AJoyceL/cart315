@@ -43,7 +43,16 @@ I decided to use tilemaps to make it easier to draw the whole scene. I'll layer 
 
 For each day, I'll create - copy and paste the first scene - different scenes, starting with day 1 and add a Menu and ending scene for each day. For now, I made a prefab of the grid to place in every scene.
 
-I'll work on the colliders and the player movement another time. I might reuse the player movement from my Prototype 3 and any script I've used that might work well for this specific project. 
+I'll work on the colliders and the player movement another time. I might reuse the player movement from my Prototype 2 and any script I've used that might work well for this specific project. 
+
+___
+
+### Nov 23
+
+I had added a tilemap collider and a composite collider to all but the grouund tilemap. After doing some research to understand what the different composite operation types did, I seperated my shelves adn freezers into several tilemaps to use merge composite so that multiple grids making up a shape are merged into *one* collider. I made seperate tilemaps for the storage room, where the players will collide to trigger a box retrieval to restock shelves, and doors for the player to collide to trigger the end of their shift. 
+I also created a playermovement script for the player, but I'll reuse what I can from the P2 project.
+
+Another idea came to mind relating to the timer. Players will have a 15 or 30 second warning towards the end of the shift to leave the store. If they fail to reach the door by the end of their shift, they lose and have to restart the day. First time players won't be expecting it, so I'm hoping it'll be something unexpected. It will also make players more inclined to finish their tasks and exit as quickly as possible, even with the creature patrolling the store. 
 
 ___
 
