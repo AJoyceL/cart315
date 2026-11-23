@@ -34,3 +34,17 @@ The monster's appearence would be anounced by a sound effect or message, then it
 It would appear periodically for 2 days, and on the last day, it would be constantly patroling the shop. 
 
 All of this would play over the vanishing objects and the anomalies. The player's goal would be to finish their tasks before the timer runs out *and* without being caught by the monster. 
+
+
+I found a [tileset asset](https://reakain.itch.io/gb-studio-7-11-tileset) by Reakain and followed this [tutorial](https://www.youtube.com/watch?v=DTp5zi8_u1U) to create the tileset tiles to draw on the grid and create my shop template. 
+The retro style reminds me of Pokemon Green, a game that came out in 1996. The visual aesthetic fulfils both the familiar but creepy style I wanted. 
+
+I decided to use tilemaps to make it easier to draw the whole scene. I'll layer the Obstacle, Wall and Ground layers and add colliders to make it possible to walk and complete tasks. 
+
+For each day, I'll create - copy and paste the first scene - different scenes, starting with day 1 and add a Menu and ending scene for each day. For now, I made a prefab of the grid to place in every scene.
+
+I'll work on the colliders and the player movement another time. I might reuse the player movement from my Prototype 3 and any script I've used that might work well for this specific project. 
+
+___
+
+### Nov
