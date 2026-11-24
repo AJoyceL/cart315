@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4464513427178332366}
   m_Layer: 0
   m_Name: Storage
-  m_TagString: Untagged
+  m_TagString: Storage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 2550170335018092160}
   m_Layer: 0
   m_Name: Doors
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 524508026051140567}
   m_Layer: 0
   m_Name: Freezer
-  m_TagString: Untagged
+  m_TagString: Freezer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5143,7 +5143,7 @@ GameObject:
   - component: {fileID: 5817925261751985806}
   m_Layer: 0
   m_Name: ShelvesA
-  m_TagString: Untagged
+  m_TagString: Shelves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35445,7 +35445,7 @@ GameObject:
   - component: {fileID: 8338960395791636161}
   m_Layer: 0
   m_Name: ShelvesB
-  m_TagString: Untagged
+  m_TagString: Shelves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35828,7 +35828,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 67
-      m_TileSpriteIndex: 37
+      m_TileSpriteIndex: 105
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -36143,8 +36143,8 @@ Tilemap:
     m_Data: {fileID: -647341137, guid: 6034e8e7bfb6f4b9fb6f09cbfb1a9d32, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 570910010, guid: 6034e8e7bfb6f4b9fb6f09cbfb1a9d32, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1386771638, guid: 6034e8e7bfb6f4b9fb6f09cbfb1a9d32, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 1034262798, guid: 6034e8e7bfb6f4b9fb6f09cbfb1a9d32, type: 3}
   - m_RefCount: 2
@@ -36279,8 +36279,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1386771638, guid: 6034e8e7bfb6f4b9fb6f09cbfb1a9d32, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -759349261, guid: 6034e8e7bfb6f4b9fb6f09cbfb1a9d32, type: 3}
   - m_RefCount: 1
