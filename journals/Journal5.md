@@ -66,8 +66,8 @@ I picked the [first](https://reakain.itch.io/gb-studio-trains) one for the emote
 The the [second](https://reakain.itch.io/gb-studio-outdoor-tileset) one was for the larger files of otudoor assets I could use as sprites for trash.
 
 I duploicated the outdoor pack to trim out everything, but the sprite I need for the trash and converted it into an image. This way, I can creat multiple, individual gameObjects for the player to clean up.
-
-
+Since I want a random amount of trash to spawn at the start of the scene at random position, I'll have to use Random.Range. I followed this [Unity](https://generalistprogrammer.com/tutorials/unity-spawn-object-at-random-position?utm_source=chatgpt.com) tutorial.
+The amount randomiser works, but the random position doesn't. I'll work on it tomorrow since it's getting late. 
 ___
 
 ### Nov
