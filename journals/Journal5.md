@@ -56,6 +56,10 @@ Another idea came to mind relating to the timer. Players will have a 15 or 30 se
 
 I continued working on it later in the day. I had a look at the P2 snakes script and decided it would be better if I reused the player paddle script from my P1 instead. It was much simpler and fit the player movement more than the snake's. I placed the PlayerMovement on the player object and locked the RigidBody's Z rotation. It works smoothly.
 
+I created a CameraFollow following this smooth camera follow [tutorial](https://youtu.be/8rnRvotQmdg?si=2v1nxoIGZDnxnqy1) to make the camera follow the player as they move around the store. 
+The camera damping adds a small drag to the camera moement as it follows the player. I foudn it interesting, especially for a horro themed game where the player would have to move slow and steady to hide from the patrol.  I think it would encourage player to mvoe more carefully if the camera takes a few seconsd to complete the same moement as the player.
+To compensate slightly with this handicap, I widened the camera range for the player to look at the next and/or rpevious rows. This way, the player will be able to watch the patrol's movement and path. 
+
 ___
 
 ### Nov
