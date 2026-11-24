@@ -54,6 +54,8 @@ I also created a playermovement script for the player, but I'll reuse what I can
 
 Another idea came to mind relating to the timer. Players will have a 15 or 30 second warning towards the end of the shift to leave the store. If they fail to reach the door by the end of their shift, they lose and have to restart the day. First time players won't be expecting it, so I'm hoping it'll be something unexpected. It will also make players more inclined to finish their tasks and exit as quickly as possible, even with the creature patrolling the store. 
 
+I continued working on it later in the day. I had a look at the P2 snakes script and decided it would be better if I reused the player paddle script from my P1 instead. It was much simpler and fit the player movement more than the snake's. I placed the PlayerMovement on the player object and locked the RigidBody's Z rotation. It works smoothly.
+
 ___
 
 ### Nov
