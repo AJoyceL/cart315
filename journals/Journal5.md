@@ -60,7 +60,10 @@ I created a CameraFollow following this smooth camera follow [tutorial](https://
 The camera damping adds a small drag to the camera moement as it follows the player. I foudn it interesting, especially for a horro themed game where the player would have to move slow and steady to hide from the patrol.  I think it would encourage player to mvoe more carefully if the camera takes a few seconsd to complete the same moement as the player.
 To compensate slightly with this handicap, I widened the camera range for the player to look at the next and/or rpevious rows. This way, the player will be able to watch the patrol's movement and path. 
 
-I downloaded a second [asset](https://reakain.itch.io/gb-studio-trains) pack from the same creator for extra sprites to use. It keeps the same GameBoy theme/style.
+I downloaded 2 orher asset packs from the same creator for extra sprites to use. It keeps the same GameBoy theme/style.
+
+I picked the [first](https://reakain.itch.io/gb-studio-trains) one for the emotes and the character asset I can utilise later on.
+The the [second](https://reakain.itch.io/gb-studio-outdoor-tileset) one was for the larger files of otudoor assets I could use as sprites for trash.
 
 ___
 
