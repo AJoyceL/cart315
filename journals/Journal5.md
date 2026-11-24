@@ -65,6 +65,9 @@ I downloaded 2 orher asset packs from the same creator for extra sprites to use.
 I picked the [first](https://reakain.itch.io/gb-studio-trains) one for the emotes and the character asset I can utilise later on.
 The the [second](https://reakain.itch.io/gb-studio-outdoor-tileset) one was for the larger files of otudoor assets I could use as sprites for trash.
 
+I duploicated the outdoor pack to trim out everything, but the sprite I need for the trash and converted it into an image. This way, I can creat multiple, individual gameObjects for the player to clean up.
+
+
 ___
 
 ### Nov

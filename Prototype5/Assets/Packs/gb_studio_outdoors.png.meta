@@ -861,13 +861,13 @@ TextureImporter:
       name: gb_studio_outdoors_32
       rect:
         serializedVersion: 2
-        x: 112
-        y: 72
+        x: 111
+        y: 71
         width: 38
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      alignment: 9
+      pivot: {x: -6.1223817, y: 0.1954119}
+      border: {x: 3, y: 1, z: 1, w: 1}
       customData: 
       outline: []
       physicsShape: []
