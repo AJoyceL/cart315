@@ -65,9 +65,11 @@ I downloaded 2 orher asset packs from the same creator for extra sprites to use.
 I picked the [first](https://reakain.itch.io/gb-studio-trains) one for the emotes and the character asset I can utilise later on.
 The the [second](https://reakain.itch.io/gb-studio-outdoor-tileset) one was for the larger files of otudoor assets I could use as sprites for trash.
 
-I duploicated the outdoor pack to trim out everything, but the sprite I need for the trash and converted it into an image. This way, I can creat multiple, individual gameObjects for the player to clean up.
+I duplicated the outdoor pack to trim out everything, but the sprite I need for the trash and converted it into an image. This way, I can creat multiple, individual gameObjects for the player to clean up.
 Since I want a random amount of trash to spawn at the start of the scene at random position, I'll have to use Random.Range. I followed this [Unity](https://generalistprogrammer.com/tutorials/unity-spawn-object-at-random-position?utm_source=chatgpt.com) tutorial.
-The amount randomiser works, but the random position doesn't. I'll work on it tomorrow since it's getting late. 
+The amount randomiser works, but the random position doesn't, it keeps spawning at (0,0). I'll work on it tomorrow since it's getting late. 
 ___
 
-### Nov
+### Nov 25
+
+I figured out why the trash sprite always kept spawning at (0,0). I forgot to assign the max and min position in the empty object called TrashSpawner. That's why. Now I have to prevent it from spawning in the shelves. 
