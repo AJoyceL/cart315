@@ -1,29 +1,60 @@
+
 using UnityEngine;
 
 public class Trash : MonoBehaviour
-{ public GameObject trashPrefab;
+{
+    public GameObject trashPrefab;
     public int trashAmount;
 
+    // Position
     public Vector2 minPos;
     public Vector2 maxPos;
 
+    // Overlap
+    public LayerMask ObstacleLayer;
+    public Vector2 checkSize = new Vector2(.5f, .5f); //Check spawn area size
+
     void Start()
     {
-        Debug.Log("Min Position: " + minPos);
-        Debug.Log("Max Position: " + maxPos);
-
         trashAmount = Random.Range(3, 7);
 
         for (int i = 0; i < trashAmount; i++)
         {
-            float positionX = Random.Range(minPos.x, maxPos.x);
-            float positionY = Random.Range(minPos.y, maxPos.y);
+            bool validPosition = false;
 
-            Vector2 randomPos = new Vector2(positionX, positionY);
-            
-            Debug.Log(randomPos);
+            for (int attempt = 0; attempt < 100; attempt++)
+            {
+                int x = Random.Range(
+                    Mathf.CeilToInt(minPos.x),
+                    Mathf.FloorToInt(maxPos.x) + 1
+                );
 
-            Instantiate(trashPrefab, randomPos, Quaternion.identity);
+                int y = Random.Range(
+                    Mathf.CeilToInt(minPos.y),
+                    Mathf.FloorToInt(maxPos.y) + 1
+                );
+
+                Vector2 randomPos = new Vector2(x, y);
+
+                Collider2D Obstacle = Physics2D.OverlapBox(
+                    randomPos,
+                    checkSize,
+                    0f,
+                    ObstacleLayer
+                );
+
+                if (Obstacle == null)
+                {
+                    Instantiate(trashPrefab, randomPos, Quaternion.identity);
+                    validPosition = true;
+                    break;
+                }
+            }
+
+            if (!validPosition)
+            {
+                Debug.Log("Could not find an empty position for trash.");
+            }
         }
     }
 }

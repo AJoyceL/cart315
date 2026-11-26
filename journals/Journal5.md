@@ -73,3 +73,5 @@ ___
 ### Nov 25
 
 I figured out why the trash sprite always kept spawning at (0,0). I forgot to assign the max and min position in the empty object called TrashSpawner. That's why. Now I have to prevent it from spawning in the shelves. 
+
+While the initial issue is fixed, another one that popped up is that some trash are created on shelves. I tried using OverlapBox(), but it still doesn't work. Worst case scenario, if I can't get it fixed because the use of tilemaps might create a complication, I'll draw the paths myself on Unity.

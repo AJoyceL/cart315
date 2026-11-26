@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 1232643853}
   m_Layer: 0
   m_Name: TrashSpawner
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,6 +389,10 @@ MonoBehaviour:
   trashAmount: 0
   minPos: {x: 14, y: 0}
   maxPos: {x: -14, y: -35}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  checkSize: {x: 0.5, y: 0.5}
 --- !u!4 &1232643854
 Transform:
   m_ObjectHideFlags: 0
@@ -398,7 +402,7 @@ Transform:
   m_GameObject: {fileID: 1232643852}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.7, y: -34, z: 0}
+  m_LocalPosition: {x: 4.8, y: -26.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -583,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1ba525572ea45ebbdb7ab29dc57d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 5
+  speed: 20
   direction: {x: 0, y: 0}
 --- !u!1001 &1626304862
 PrefabInstance:

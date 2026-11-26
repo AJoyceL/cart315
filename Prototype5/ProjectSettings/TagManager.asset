@@ -8,6 +8,8 @@ TagManager:
   - Freezer
   - Storage
   - Exit
+  - Trash
+  - Register
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Obstacles
   - 
   - 
   - 
