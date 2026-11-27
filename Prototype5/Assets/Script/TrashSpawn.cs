@@ -1,59 +1,37 @@
 
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Trash : MonoBehaviour
 {
-    public GameObject trashPrefab;
+    public GameObject trashPrefab; //trash prefab
+    public Tilemap groundTilemap; //ground tilemap
+
     public int trashAmount;
-
-    // Position
-    public Vector2 minPos;
-    public Vector2 maxPos;
-
-    // Overlap
-    public LayerMask ObstacleLayer;
-    public Vector2 checkSize = new Vector2(.5f, .5f); //Check spawn area size
 
     void Start()
     {
-        trashAmount = Random.Range(3, 7);
+        trashAmount = Random.Range(3, 7); //range of trash amount
+
+        BoundsInt bounds = groundTilemap.cellBounds;
 
         for (int i = 0; i < trashAmount; i++)
         {
-            bool validPosition = false;
-
             for (int attempt = 0; attempt < 100; attempt++)
             {
-                int x = Random.Range(
-                    Mathf.CeilToInt(minPos.x),
-                    Mathf.FloorToInt(maxPos.x) + 1
-                );
+                int x = Random.Range(bounds.xMin, bounds.xMax);
+                int y = Random.Range(bounds.yMin, bounds.yMax);
 
-                int y = Random.Range(
-                    Mathf.CeilToInt(minPos.y),
-                    Mathf.FloorToInt(maxPos.y) + 1
-                );
+                Vector3Int cellPosition = new Vector3Int(x, y, 0);
 
-                Vector2 randomPos = new Vector2(x, y);
-
-                Collider2D Obstacle = Physics2D.OverlapBox(
-                    randomPos,
-                    checkSize,
-                    0f,
-                    ObstacleLayer
-                );
-
-                if (Obstacle == null)
+                if (groundTilemap.HasTile(cellPosition))
                 {
-                    Instantiate(trashPrefab, randomPos, Quaternion.identity);
-                    validPosition = true;
+                    Vector3 spawnPosition = groundTilemap.GetCellCenterWorld(cellPosition);
+
+                    Instantiate(trashPrefab, spawnPosition, Quaternion.identity);
+
                     break;
                 }
-            }
-
-            if (!validPosition)
-            {
-                Debug.Log("Could not find an empty position for trash.");
             }
         }
     }

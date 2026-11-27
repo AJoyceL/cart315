@@ -66,7 +66,7 @@ I picked the [first](https://reakain.itch.io/gb-studio-trains) one for the emote
 The the [second](https://reakain.itch.io/gb-studio-outdoor-tileset) one was for the larger files of otudoor assets I could use as sprites for trash.
 
 I duplicated the outdoor pack to trim out everything, but the sprite I need for the trash and converted it into an image. This way, I can creat multiple, individual gameObjects for the player to clean up.
-Since I want a random amount of trash to spawn at the start of the scene at random position, I'll have to use Random.Range. I followed this [Unity](https://generalistprogrammer.com/tutorials/unity-spawn-object-at-random-position?utm_source=chatgpt.com) tutorial.
+Since I want a random amount of trash to spawn at the start of the scene at random position, I'll have to use Random.Range. I followed this [Unity](https://generalistprogrammer.com/tutorials/unity-spawn-object-at-random-position?) tutorial.
 The amount randomiser works, but the random position doesn't, it keeps spawning at (0,0). I'll work on it tomorrow since it's getting late. 
 ___
 
@@ -75,3 +75,21 @@ ___
 I figured out why the trash sprite always kept spawning at (0,0). I forgot to assign the max and min position in the empty object called TrashSpawner. That's why. Now I have to prevent it from spawning in the shelves. 
 
 While the initial issue is fixed, another one that popped up is that some trash are created on shelves. I tried using OverlapBox(), but it still doesn't work. Worst case scenario, if I can't get it fixed because the use of tilemaps might create a complication, I'll draw the paths myself on Unity.
+
+
+___
+
+### Nov 26
+
+I figured out a way to fix my position issue. Rather than using overlapBox() to prevent trash from overlapping on shelves when spawned in at the start of the scene; what if I just limitted the range to the ground tilemap? 
+This way, I wouldn't need to use overlpaBox() and it would simplify my script. I used BoundsInt and cellBounds. I combined both this [reference](https://discussions.unity.com/t/how-do-you-randomly-spawn-an-object-on-the-unused-places-of-a-procedurally-generated-tilemap/) and this [one](https://discussions.unity.com/t/how-do-you-randomly-spawn-an-object-on-the-unused-places-of-a-procedurally-generated-tilemap/).
+
+I used BoundsInt bounds to store the ground tilemap as boundary lines. 
+Vector3Int cellBounds is used to create random positions for the x and y, with z permanently assigned as 0. 
+The if (groundTilemap.HasTile(cellBounds)) checks for existing tiles and the GetCellCenterWorld(cellPosition) finds and gets the center of the selected tile. 
+
+Now, I have a working random position spawner bound to the ground layer of my tilemap.
+
+___
+
+### Nov
